@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Layout title="Insights" description="Thinking about AI strategy, creativity, and transformation.">
+
+  <PageHero
+    label="Insights"
+    title='Thinking about AI, <span class="text-ms-green-400">out loud.</span>'
+    subtitle="Opinions, frameworks, and lessons from the field. No '10 AI trends you need to know' listicles."
+  />
+
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-4xl mx-auto px-6 py-24">
+      <div class="space-y-8">
+
+        <!-- Article Card -->
+        <a href="/insights/execution-is-collapsing" class="group block bg-ms-dark-900 border border-white/5 rounded-2xl p-8 hover:border-ms-green-500/30 transition-all">
+          <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
+            <time datetime="2026-03-07">March 7, 2026</time>
+            <span>·</span>
+            <span>5 min read</span>
+          </div>
+          <h2 class="text-2xl font-bold group-hover:text-ms-green-400 transition">Execution Is Collapsing</h2>
+          <p class="mt-3 text-gray-400 leading-relaxed">What a 90-minute website rebuild reveals about AI and the future of work. When execution becomes cheap, the advantage shifts to organizations that can think, decide, and experiment faster.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+
+</Layout>
