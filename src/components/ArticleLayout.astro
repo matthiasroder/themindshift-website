@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTA from './CTA.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+}
+
+const { title, description, date } = Astro.props;
+
+const formatted = new Date(date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<Layout title={title} description={description}>
+
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-ms-dark-900 via-ms-dark-800 to-ms-dark-900"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-ms-green-500/5 rounded-full blur-3xl"></div>
+    <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
+      <a href="/insights" class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4 inline-block hover:text-ms-green-300 transition">&larr; Insights</a>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight max-w-4xl mt-4">{title}</h1>
+      <p class="mt-6 text-gray-500">{formatted}</p>
+    </div>
+  </section>
+
+  <article class="bg-ms-dark-800 border-y border-white/5">
+    <div class="article-content max-w-3xl mx-auto px-6 py-24 text-lg text-gray-400 leading-relaxed">
+      <slot />
+    </div>
+  </article>
+
+  <style>
+    .article-content :global(p) {
+      margin-bottom: 1.5rem;
+    }
+    .article-content :global(h2) {
+      color: white;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-content :global(a) {
+      color: var(--color-ms-green-400);
+      transition: color 0.15s;
+    }
+    .article-content :global(a:hover) {
+      color: var(--color-ms-green-300);
+    }
+    .article-content :global(strong) {
+      color: white;
+    }
+    .article-content :global(em) {
+      font-style: italic;
+    }
+    .article-content :global(ul) {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-content :global(li) {
+      margin-bottom: 0.5rem;
+    }
+    .article-content :global(table) {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    .article-content :global(th) {
+      color: white;
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+    }
+    .article-content :global(td) {
+      padding: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
+
+  <CTA />
+
+</Layout>
