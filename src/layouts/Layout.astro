@@ -36,7 +36,14 @@ const { title, description = "AI Strategy and Custom AI Solutions — The Mindsh
             Book a Call
           </a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden text-white">
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-white"
+          aria-label="Toggle navigation menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          type="button"
+        >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -67,8 +74,13 @@ const { title, description = "AI Strategy and Custom AI Solutions — The Mindsh
     </footer>
 
     <script>
-      document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      const mobileMenuButton = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+        const isExpanded = mobileMenu ? !mobileMenu.classList.contains('hidden') : false;
+        mobileMenuButton.setAttribute('aria-expanded', String(isExpanded));
       });
     </script>
   </body>

@@ -7,6 +7,8 @@
 <script>
   const canvas = document.getElementById('genetic-canvas') as HTMLCanvasElement;
   const ctx = canvas.getContext('2d')!;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let animationFrameId = 0;
 
   let width: number, height: number;
   let particles: Particle[] = [];
@@ -56,9 +58,11 @@
   }
 
   function resize() {
-    width = canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-    height = canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    const dpr = window.devicePixelRatio || 1;
+    width = canvas.width = canvas.offsetWidth * dpr;
+    height = canvas.height = canvas.offsetHeight * dpr;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
   }
 
   function createParticle(x?: number, y?: number): Particle {
@@ -288,7 +292,7 @@
       mutant.fitness = Math.max(0, Math.min(1, mutant.fitness));
       const weakest = particles.reduce((a, b) => a.fitness < b.fitness ? a : b);
       const idx = particles.indexOf(weakest);
-      if (idx >= 0 && particles.length > 300) {
+      if (idx >= 0) {
         particles[idx] = mutant;
       }
     }
@@ -411,13 +415,29 @@
   function animate() {
     update();
     draw();
-    requestAnimationFrame(animate);
+    animationFrameId = requestAnimationFrame(animate);
   }
 
   init();
-  animate();
+  if (!prefersReducedMotion.matches) {
+    animate();
+  } else {
+    draw();
+  }
 
   window.addEventListener('resize', () => {
     resize();
+    if (prefersReducedMotion.matches) {
+      draw();
+    }
+  });
+
+  prefersReducedMotion.addEventListener('change', (event) => {
+    if (event.matches) {
+      cancelAnimationFrame(animationFrameId);
+      draw();
+    } else {
+      animate();
+    }
   });
 </script>
