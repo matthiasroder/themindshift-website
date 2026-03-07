@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GeneticHero from '../components/GeneticHero.astro';
+---
+
+<Layout title="AI Strategy & Custom Solutions" description="The Mindshift helps leadership teams cut through the AI noise, find the opportunities that matter, and build the confidence to act.">
+
+  <!-- HERO -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <!-- Gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-ms-dark-900 via-ms-dark-800 to-ms-dark-900"></div>
+    <!-- Genetic algorithm animation -->
+    <GeneticHero />
+    <!-- Green glow overlay -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-ms-green-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 py-24">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight max-w-4xl">
+        Your company doesn't have an AI&nbsp;problem.
+        <span class="text-ms-green-400">It has a decision&nbsp;problem.</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+        Every executive knows AI matters. Few know where to start. We help leadership teams cut through the noise, find the real opportunities, and build the confidence to act.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
+          Book a Discovery Call
+        </a>
+        <a href="/work/beethoven-x" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full font-medium text-lg transition text-center">
+          See Our Work
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <div class="max-w-3xl">
+        <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">The Reality</p>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+          Most AI initiatives die in the pilot phase.
+        </h2>
+        <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+          Only 4 out of 33 AI prototypes make it to production. Two-thirds of companies are stuck in proof-of-concept hell. Not because the technology doesn't work, but because the organization doesn't know how to absorb it.
+        </p>
+        <p class="mt-4 text-lg text-white font-medium">
+          You don't need another vendor demo. You need clarity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">What We Do</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-16">Three ways we work with you.</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Workshop -->
+        <a href="/services/workshops" class="group bg-ms-dark-800 border border-white/5 rounded-2xl p-8 hover:border-ms-green-500/30 transition-all">
+          <div class="w-12 h-12 bg-ms-green-500/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-ms-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-ms-green-400 transition">Executive AI Workshops</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Half-day and full-day sessions for leadership teams. You leave with a shared understanding of what AI can do for <em>your</em> business and a prioritized shortlist of where to start.
+          </p>
+          <p class="mt-4 text-ms-green-400 text-sm font-medium">Learn more →</p>
+        </a>
+
+        <!-- Strategy -->
+        <a href="/services/strategy" class="group bg-ms-dark-800 border border-white/5 rounded-2xl p-8 hover:border-ms-green-500/30 transition-all">
+          <div class="w-12 h-12 bg-ms-green-500/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-ms-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-ms-green-400 transition">AI Strategy & Transformation</h3>
+          <p class="text-gray-400 leading-relaxed">
+            From readiness assessment to implementation roadmap. We find the use cases worth investing in, build the business case, and design the path from pilot to production.
+          </p>
+          <p class="mt-4 text-ms-green-400 text-sm font-medium">Learn more →</p>
+        </a>
+
+        <!-- Solutions -->
+        <a href="/services/solutions" class="group bg-ms-dark-800 border border-white/5 rounded-2xl p-8 hover:border-ms-green-500/30 transition-all">
+          <div class="w-12 h-12 bg-ms-green-500/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-ms-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-ms-green-400 transition">Custom AI Solutions</h3>
+          <p class="text-gray-400 leading-relaxed">
+            When off-the-shelf doesn't cut it. We design and build AI tools tailored to your workflows: internal assistants, decision support, process automation that fits your reality.
+          </p>
+          <p class="mt-4 text-ms-green-400 text-sm font-medium">Learn more →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEETHOVEN X / PROOF -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">Featured Project</p>
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+            We used AI to finish Beethoven's 10th&nbsp;Symphony.
+          </h2>
+          <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+            Commissioned by Deutsche Telekom. Premiered in Bonn. Covered by BBC, CNN, The New York Times, and 2,000+ media outlets worldwide.
+          </p>
+          <p class="mt-4 text-lg text-gray-300 leading-relaxed">
+            It proved something most consulting decks can't: AI and human creativity aren't opposites. They're collaborators.
+          </p>
+          <a href="/work/beethoven-x" class="inline-block mt-8 text-ms-green-400 font-semibold hover:text-ms-green-300 transition">
+            Read the full story →
+          </a>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-white/5">
+          <img src="/images/beethoven-x-hero.jpg" alt="Beethoven X — AI meets classical music" class="w-full h-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="rounded-2xl overflow-hidden max-w-sm border border-white/5">
+          <img src="/images/matthias-roeder.jpg" alt="Dr. Matthias Röder" class="w-full h-auto" />
+          <p class="text-xs text-gray-600 mt-2 px-1">Photo: Philipp Gladsome</p>
+        </div>
+        <div>
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">The Founder</p>
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+            What happens when a musician learns to think in&nbsp;algorithms.
+          </h2>
+          <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+            Dr. Matthias Röder. Former Managing Director of the Herbert von Karajan estate, founder of the Karajan Music Tech Conference, and the person who led the team that used AI to complete Beethoven's unfinished 10th Symphony.
+          </p>
+          <p class="mt-4 text-lg text-gray-300">
+            Now he helps business leaders do what he did: take a technology everyone talks about and turn it into something real.
+          </p>
+          <a href="/about" class="inline-block mt-8 text-ms-green-400 font-semibold hover:text-ms-green-300 transition">
+            More about us →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS / SOCIAL PROOF -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-16 text-center">
+      <p class="text-sm text-gray-500 uppercase tracking-wider mb-8">As seen in</p>
+      <div class="flex flex-wrap items-center justify-center gap-12 text-gray-600 text-lg font-medium">
+        <span>BBC</span>
+        <span>CNN</span>
+        <span>The New York Times</span>
+        <span>The Guardian</span>
+        <span>Deutsche Telekom</span>
+        <span>Süddeutsche Zeitung</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight">
+        Ready to stop talking about AI and
+        <span class="text-ms-green-400">start using it?</span>
+      </h2>
+      <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">
+        A 30-minute discovery call. No pitch deck. We listen, ask the right questions, and tell you honestly whether we can help.
+      </p>
+      <a href="/contact" class="inline-block mt-10 bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-10 py-4 rounded-full font-semibold text-lg transition">
+        Book a Discovery Call
+      </a>
+    </div>
+  </section>
+
+</Layout>

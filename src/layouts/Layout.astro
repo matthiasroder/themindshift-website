@@ -1,0 +1,75 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "AI Strategy and Custom AI Solutions — The Mindshift" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>{title} — The Mindshift</title>
+  </head>
+  <body class="bg-ms-dark-900 text-white font-sans antialiased">
+    <nav class="fixed top-0 w-full z-50 bg-ms-dark-900/80 backdrop-blur-md border-b border-white/5">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="text-xl font-bold tracking-tight">
+          <span class="text-white">The </span><span class="text-ms-green-400">Mindshift</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm">
+          <a href="/services" class="text-gray-300 hover:text-white transition">Services</a>
+          <a href="/work" class="text-gray-300 hover:text-white transition">Work</a>
+          <a href="/about" class="text-gray-300 hover:text-white transition">About</a>
+          <a href="/insights" class="text-gray-300 hover:text-white transition">Insights</a>
+          <a href="/faq" class="text-gray-300 hover:text-white transition">FAQ</a>
+          <a href="/contact" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-5 py-2 rounded-full font-semibold transition">
+            Book a Call
+          </a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+        <a href="/services" class="block text-gray-300 hover:text-white">Services</a>
+        <a href="/work" class="block text-gray-300 hover:text-white">Work</a>
+        <a href="/about" class="block text-gray-300 hover:text-white">About</a>
+        <a href="/insights" class="block text-gray-300 hover:text-white">Insights</a>
+        <a href="/faq" class="block text-gray-300 hover:text-white">FAQ</a>
+        <a href="/contact" class="block bg-ms-green-500 text-ms-dark-900 px-5 py-2 rounded-full font-semibold text-center">Book a Call</a>
+      </div>
+    </nav>
+
+    <main class="pt-16">
+      <slot />
+    </main>
+
+    <footer class="border-t border-white/5 mt-24">
+      <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+        <div>© 2026 The Mindshift. All rights reserved.</div>
+        <div class="flex gap-6">
+          <a href="/impressum" class="hover:text-gray-300 transition">Impressum</a>
+          <a href="/privacy" class="hover:text-gray-300 transition">Datenschutz</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

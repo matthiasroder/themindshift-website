@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Layout title="Work" description="Things we've built. Problems we've solved.">
+
+  <PageHero
+    label="Our Work"
+    title='Things we&apos;ve built. <span class="text-ms-green-400">Problems we&apos;ve solved.</span>'
+  />
+
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24 space-y-16">
+
+      <!-- Beethoven X -->
+      <a href="/work/beethoven-x" class="group block">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="rounded-2xl overflow-hidden border border-white/5 group-hover:border-ms-green-500/30 transition">
+            <img src="/images/beethoven-x-hero.jpg" alt="Beethoven X — AI meets the 10th Symphony" class="w-full h-auto" />
+          </div>
+          <div>
+            <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-3">Featured Project</p>
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 group-hover:text-ms-green-400 transition">Beethoven X</h2>
+            <p class="text-lg text-gray-400 leading-relaxed">
+              We led the project that used AI to complete Beethoven's unfinished 10th Symphony. Commissioned by Deutsche Telekom. Premiered in Bonn. Covered by 2,000+ media outlets worldwide.
+            </p>
+            <p class="mt-6 text-ms-green-400 font-medium">Read the story →</p>
+          </div>
+        </div>
+      </a>
+
+      <div class="border-t border-white/5"></div>
+
+      <!-- Client Projects -->
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Client Projects</h2>
+        <p class="text-lg text-gray-400 max-w-2xl">
+          Strategy engagements, workshops, and custom solutions for companies across industries. Detailed case studies available on request. Some clients prefer discretion, and we respect that.
+        </p>
+        <a href="/contact" class="inline-block mt-6 text-ms-green-400 font-medium hover:text-ms-green-300 transition">
+          Ask us about our work in a discovery call →
+        </a>
+      </div>
+
+      <div class="border-t border-white/5"></div>
+
+      <!-- Speaking -->
+      <a href="/work/speaking" class="group block">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 group-hover:text-ms-green-400 transition">Speaking & Keynotes</h2>
+        <p class="text-lg text-gray-400 max-w-2xl">
+          Dr. Röder speaks at conferences, corporate events, and leadership summits on AI strategy, creativity, and transformation. Past audiences range from Fortune 500 boardrooms to 2,000-person innovation conferences.
+        </p>
+        <p class="mt-6 text-ms-green-400 font-medium">Speaking topics & booking →</p>
+      </a>
+
+    </div>
+  </section>
+
+  <CTA />
+
+</Layout>

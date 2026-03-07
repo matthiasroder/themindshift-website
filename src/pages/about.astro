@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<Layout title="About" description="What happens when a musician learns to think in algorithms.">
+
+  <PageHero
+    label="About"
+    title='What happens when a musician learns to think in <span class="text-ms-green-400">algorithms.</span>'
+    subtitle="The Mindshift exists because its founder spent 15 years at the intersection of art, technology, and leadership. He realized that the gap between AI potential and business reality is the most interesting problem to solve."
+  />
+
+  <!-- Founder -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <div class="grid md:grid-cols-[350px_1fr] gap-16 items-start">
+        <div class="rounded-2xl overflow-hidden border border-white/5">
+          <img src="/images/matthias-roeder.jpg" alt="Dr. Matthias Röder" class="w-full h-auto" />
+          <p class="text-xs text-gray-600 mt-2 px-1">Photo: Philipp Gladsome</p>
+        </div>
+        <div>
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">The Founder</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8">Dr. Matthias Röder</h2>
+          <div class="space-y-4 text-lg text-gray-400 leading-relaxed">
+            <p>
+              Classical guitarist turned technology strategist. Former Managing Director of the Herbert von Karajan estate, where he spent a decade managing one of the most iconic brands in classical music and learning how institutions adapt (or don't) to technological change.
+            </p>
+            <p>
+              Then came Beethoven X. The project that changed everything. Leading a team that used AI to complete Beethoven's unfinished 10th Symphony, commissioned by Deutsche Telekom, premiered in Bonn, covered by 2,000+ media outlets worldwide. It proved that AI and human creativity aren't just compatible. They're better together.
+            </p>
+            <p>
+              Now, through The Mindshift, he brings that same approach to business: understand the technology deeply enough to know what it can really do, then help leaders make it work in their world.
+            </p>
+            <p class="text-white font-medium">
+              Not a technologist who learned business. Not a consultant who read about AI. Someone who's lived in both worlds and can translate between them.
+            </p>
+            <p class="text-gray-500">
+              He also co-founded the Sonophilia Foundation, a Munich-based non-profit supporting research into creativity, science, and technology. And he still makes electronic music when he thinks nobody's listening.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company -->
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <div class="max-w-3xl">
+        <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">The Company</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">The Mindshift</h2>
+        <p class="text-lg text-gray-400 leading-relaxed mb-8">
+          An AI strategy consultancy based in Munich, working with companies across Europe and beyond. We work at the executive level, with founders, board members, and leadership teams who know they need to move on AI but want a partner who's done more than read the McKinsey report.
+        </p>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-8">What we believe.</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        {[
+          {
+            title: "AI is a leadership challenge, not a technology project.",
+            desc: "The tools work. The question is whether your organization can absorb them."
+          },
+          {
+            title: "Clarity beats complexity.",
+            desc: "We'd rather give you a one-page strategy that works than a 100-slide deck that doesn't."
+          },
+          {
+            title: "Speed matters.",
+            desc: "The companies that move now, imperfectly, will beat the ones that wait for the perfect plan."
+          },
+          {
+            title: "Human judgment is the product.",
+            desc: "AI handles the heavy lifting. Your team makes the decisions that matter."
+          }
+        ].map(item => (
+          <div class="bg-ms-dark-800 border border-white/5 rounded-xl p-6">
+            <h4 class="text-white font-bold mb-2">{item.title}</h4>
+            <p class="text-gray-400">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Network -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-3xl mx-auto px-6 py-24">
+      <h2 class="text-2xl font-bold mb-8">Network.</h2>
+      <p class="text-lg text-gray-400 leading-relaxed mb-8">
+        The Mindshift draws on a network of researchers, technologists, and creative thinkers developed over 15 years of cross-disciplinary work:
+      </p>
+      <ul class="space-y-4 text-gray-400">
+        <li class="flex gap-3"><span class="text-ms-green-400">→</span> <strong class="text-white">Sonophilia Foundation: Creativity, science, and technology research</li>
+        <li class="flex gap-3"><span class="text-ms-green-400">→</span> <strong class="text-white">Academic partnerships: Universities and research institutions across Europe</li>
+        <li class="flex gap-3"><span class="text-ms-green-400">→</span> <strong class="text-white">Technology ecosystem: Leading AI providers, open source communities, specialist developers</li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA />
+
+</Layout>

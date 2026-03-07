@@ -1,0 +1,423 @@
+---
+// Genetic algorithm-inspired background animation
+---
+
+<canvas id="genetic-canvas" class="absolute inset-0 w-full h-full"></canvas>
+
+<script>
+  const canvas = document.getElementById('genetic-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+
+  let width: number, height: number;
+  let particles: Particle[] = [];
+  let attractors: Attractor[] = [];
+  let sparks: Spark[] = [];
+  let explosions: Explosion[] = [];
+  let frame = 0;
+
+  interface Particle {
+    x: number;
+    y: number;
+    vx: number;
+    vy: number;
+    fitness: number;
+    age: number;
+    maxAge: number;
+    size: number;
+    cluster: number;
+    alpha: number;
+  }
+
+  interface Spark {
+    x: number;
+    y: number;
+    vx: number;
+    vy: number;
+    life: number;
+    maxLife: number;
+    size: number;
+    trail: { x: number; y: number }[];
+  }
+
+  interface Explosion {
+    x: number;
+    y: number;
+    life: number;
+    maxLife: number;
+    maxRadius: number;
+  }
+
+  interface Attractor {
+    x: number;
+    y: number;
+    strength: number;
+    life: number;
+    maxLife: number;
+  }
+
+  function resize() {
+    width = canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+    height = canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
+  function createParticle(x?: number, y?: number): Particle {
+    const w = canvas.offsetWidth;
+    const h = canvas.offsetHeight;
+    return {
+      x: x ?? Math.random() * w,
+      y: y ?? Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      fitness: Math.random(),
+      age: 0,
+      maxAge: 800 + Math.random() * 1200,
+      size: 1 + Math.random() * 2.5,
+      cluster: Math.floor(Math.random() * 5),
+      alpha: 0,
+    };
+  }
+
+  function createAttractor(): Attractor {
+    const w = canvas.offsetWidth;
+    const h = canvas.offsetHeight;
+    return {
+      x: w * 0.15 + Math.random() * w * 0.7,
+      y: h * 0.15 + Math.random() * h * 0.7,
+      strength: 0.02 + Math.random() * 0.03,
+      life: 0,
+      maxLife: 400 + Math.random() * 600,
+    };
+  }
+
+  function createSpark(): Spark {
+    const w = canvas.offsetWidth;
+    const h = canvas.offsetHeight;
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 1.5 + Math.random() * 2.5;
+    return {
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      life: 0,
+      maxLife: 40 + Math.random() * 60,
+      size: 0.8 + Math.random() * 1.2,
+      trail: [],
+    };
+  }
+
+  function init() {
+    resize();
+    particles = [];
+    attractors = [];
+    sparks = [];
+
+    for (let i = 0; i < 160; i++) {
+      particles.push(createParticle());
+    }
+    for (let i = 0; i < 5; i++) {
+      attractors.push(createAttractor());
+    }
+  }
+
+  function crossover(a: Particle, b: Particle): Particle {
+    const child = createParticle(
+      (a.x + b.x) / 2 + (Math.random() - 0.5) * 20,
+      (a.y + b.y) / 2 + (Math.random() - 0.5) * 20
+    );
+    child.fitness = (a.fitness + b.fitness) / 2 + (Math.random() - 0.5) * 0.1;
+    child.size = (a.size + b.size) / 2;
+    child.cluster = Math.random() > 0.5 ? a.cluster : b.cluster;
+    return child;
+  }
+
+  function update() {
+    const w = canvas.offsetWidth;
+    const h = canvas.offsetHeight;
+    frame++;
+
+    // Evolve attractors: they drift slowly, creating organic flow
+    const t = frame * 0.005;
+    for (let i = attractors.length - 1; i >= 0; i--) {
+      const a = attractors[i];
+      a.life++;
+      a.x += Math.sin(t + i * 1.7) * 0.15;
+      a.y += Math.cos(t * 0.8 + i * 2.3) * 0.12;
+      if (a.life > a.maxLife) {
+        attractors[i] = createAttractor();
+      }
+    }
+
+    // Update particles
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.age++;
+
+      // Fade in/out
+      const fadeIn = Math.min(p.age / 60, 1);
+      const fadeOut = Math.max((p.maxAge - p.age) / 60, 0);
+      p.alpha = Math.min(fadeIn, fadeOut) * (0.15 + p.fitness * 0.35);
+
+      // Attract toward nearest attractor
+      let nearestDist = Infinity;
+      let nearestAttractor: Attractor | null = null;
+      for (const a of attractors) {
+        const dx = a.x - p.x;
+        const dy = a.y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < nearestDist) {
+          nearestDist = dist;
+          nearestAttractor = a;
+        }
+      }
+
+      if (nearestAttractor && nearestDist > 5) {
+        const dx = nearestAttractor.x - p.x;
+        const dy = nearestAttractor.y - p.y;
+        const force = nearestAttractor.strength * p.fitness / Math.max(nearestDist * 0.1, 1);
+        p.vx += dx * force * 0.01;
+        p.vy += dy * force * 0.01;
+      }
+
+      // Organic drift: sine-based wandering unique to each particle
+      const t = frame * 0.004;
+      const seed = p.maxAge;
+      p.vx += Math.sin(t + seed * 0.1) * 0.02 + (Math.random() - 0.5) * 0.008;
+      p.vy += Math.cos(t * 0.7 + seed * 0.13) * 0.02 + (Math.random() - 0.5) * 0.008;
+
+      // Damping
+      p.vx *= 0.96;
+      p.vy *= 0.96;
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      // Wrap around
+      if (p.x < -20) p.x = w + 20;
+      if (p.x > w + 20) p.x = -20;
+      if (p.y < -20) p.y = h + 20;
+      if (p.y > h + 20) p.y = -20;
+
+      // Death and rebirth
+      if (p.age > p.maxAge) {
+        particles[i] = createParticle();
+      }
+    }
+
+    // Crossover: every ~40 frames, breed two fit particles
+    if (frame % 80 === 0 && particles.length < 200) {
+      const sorted = [...particles].sort((a, b) => b.fitness - a.fitness);
+      if (sorted.length >= 2) {
+        const child = crossover(sorted[0], sorted[1]);
+        particles.push(child);
+      }
+    }
+
+    // Sparks: spawn new free radicals
+    if (frame % 25 === 0) {
+      sparks.push(createSpark());
+    }
+
+    // Update sparks
+    for (let i = sparks.length - 1; i >= 0; i--) {
+      const s = sparks[i];
+      s.life++;
+
+      // Save trail
+      s.trail.push({ x: s.x, y: s.y });
+      if (s.trail.length > 8) s.trail.shift();
+
+      // Erratic movement: sudden direction changes
+      if (Math.random() < 0.08) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 1.5 + Math.random() * 2;
+        s.vx = Math.cos(angle) * speed;
+        s.vy = Math.sin(angle) * speed;
+      }
+
+      s.vx *= 0.98;
+      s.vy *= 0.98;
+      s.x += s.vx;
+      s.y += s.vy;
+
+      if (s.life > s.maxLife) {
+        sparks.splice(i, 1);
+        continue;
+      }
+
+      // Collision: spark hits a particle → explosion
+      for (let j = particles.length - 1; j >= 0; j--) {
+        const p = particles[j];
+        const dx = s.x - p.x;
+        const dy = s.y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 15) {
+          // Explode the particle
+          explosions.push({
+            x: p.x,
+            y: p.y,
+            life: 0,
+            maxLife: 35,
+            maxRadius: 20 + p.size * 8,
+          });
+          // Kill spark and replace particle
+          sparks.splice(i, 1);
+          particles[j] = createParticle();
+          break;
+        }
+      }
+    }
+
+    // Update explosions
+    for (let i = explosions.length - 1; i >= 0; i--) {
+      explosions[i].life++;
+      if (explosions[i].life > explosions[i].maxLife) {
+        explosions.splice(i, 1);
+      }
+    }
+
+    // Mutation: frequently respawn particles nearby fit ones
+    if (frame % 30 === 0) {
+      const fit = particles.reduce((a, b) => a.fitness > b.fitness ? a : b);
+      const mutant = createParticle(
+        fit.x + (Math.random() - 0.5) * 80,
+        fit.y + (Math.random() - 0.5) * 80
+      );
+      mutant.fitness = fit.fitness + (Math.random() - 0.5) * 0.3;
+      mutant.fitness = Math.max(0, Math.min(1, mutant.fitness));
+      const weakest = particles.reduce((a, b) => a.fitness < b.fitness ? a : b);
+      const idx = particles.indexOf(weakest);
+      if (idx >= 0 && particles.length > 300) {
+        particles[idx] = mutant;
+      }
+    }
+  }
+
+  function draw() {
+    const w = canvas.offsetWidth;
+    const h = canvas.offsetHeight;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Draw connections between nearby particles
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const a = particles[i];
+        const b = particles[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 100) {
+          const lineAlpha = (1 - dist / 100) * Math.min(a.alpha, b.alpha) * 0.5;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(74, 222, 128, ${lineAlpha})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw explosions
+    for (const e of explosions) {
+      const progress = e.life / e.maxLife;
+      const radius = e.maxRadius * Math.pow(progress, 0.4);
+      const alpha = (1 - progress) * 0.5;
+
+      // Outer ring
+      ctx.beginPath();
+      ctx.arc(e.x, e.y, radius, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(74, 222, 128, ${alpha * 0.4})`;
+      ctx.lineWidth = 1.5 * (1 - progress);
+      ctx.stroke();
+
+      // Inner glow
+      ctx.beginPath();
+      ctx.arc(e.x, e.y, radius * 0.6, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(150, 255, 180, ${alpha * 0.15})`;
+      ctx.fill();
+
+      // Bright flash (first few frames)
+      if (progress < 0.15) {
+        const flashAlpha = (1 - progress / 0.15) * 0.6;
+        ctx.beginPath();
+        ctx.arc(e.x, e.y, radius * 0.3, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(220, 255, 230, ${flashAlpha})`;
+        ctx.fill();
+      }
+    }
+
+    // Draw sparks (free radicals)
+    for (const s of sparks) {
+      const lifeRatio = s.life / s.maxLife;
+      const fadeIn = Math.min(s.life / 8, 1);
+      const fadeOut = Math.max(1 - lifeRatio, 0);
+      const alpha = fadeIn * fadeOut * 0.7;
+
+      // Trail
+      for (let i = 0; i < s.trail.length - 1; i++) {
+        const t = s.trail[i];
+        const trailAlpha = (i / s.trail.length) * alpha * 0.4;
+        ctx.beginPath();
+        ctx.arc(t.x, t.y, s.size * 0.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(74, 222, 128, ${trailAlpha})`;
+        ctx.fill();
+      }
+
+      // Bright core
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.size * 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(150, 255, 180, ${alpha * 0.9})`;
+      ctx.fill();
+
+      // Hot center
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.size * 0.5, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(220, 255, 230, ${alpha})`;
+      ctx.fill();
+
+      // Spark glow
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.size * 6, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(74, 222, 128, ${alpha * 0.06})`;
+      ctx.fill();
+    }
+
+    // Draw particles
+    for (const p of particles) {
+      if (p.alpha < 0.01) continue;
+
+      // Breathing size
+      const breath = 1 + Math.sin(frame * 0.008 + p.maxAge) * 0.15;
+      const s = p.size * breath;
+
+      // Glow
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, s * 5, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(74, 222, 128, ${p.alpha * 0.08})`;
+      ctx.fill();
+
+      // Core
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, s, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(74, 222, 128, ${p.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  function animate() {
+    update();
+    draw();
+    requestAnimationFrame(animate);
+  }
+
+  init();
+  animate();
+
+  window.addEventListener('resize', () => {
+    resize();
+  });
+</script>

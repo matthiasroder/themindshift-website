@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Layout title="Custom AI Solutions" description="When off-the-shelf AI doesn't fit, we build what does.">
+
+  <PageHero
+    label="Services"
+    title='When off-the-shelf AI doesn&apos;t fit, <span class="text-ms-green-400">we build what does.</span>'
+    subtitle="Sometimes the right tool doesn't exist yet. You need an AI solution that understands your workflows, speaks your language, and integrates with systems you already run."
+  />
+
+  <!-- What we build -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16">What we build.</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {[
+          {
+            title: "Internal AI Assistants",
+            desc: "AI that knows your company: your processes, your documents, your terminology. Not a generic chatbot. A tool your team actually uses because it saves them real time."
+          },
+          {
+            title: "Decision Support Systems",
+            desc: "AI that surfaces the right information at the right moment. For executives making investment decisions, managers allocating resources, or teams triaging requests."
+          },
+          {
+            title: "Process Automation",
+            desc: "Intelligent automation that handles the gray areas, where rules-based systems fail and human judgment is expensive. Document processing, classification, routing, quality checks."
+          },
+          {
+            title: "Prototypes & MVPs",
+            desc: "Not sure if an idea has legs? We build fast, functional prototypes to validate concepts before you commit to a full build. Weeks, not months."
+          }
+        ].map(item => (
+          <div class="bg-ms-dark-700 border border-white/5 rounded-2xl p-8">
+            <h3 class="text-xl font-bold mb-3">{item.title}</h3>
+            <p class="text-gray-400 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How we build -->
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16">How we build.</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        {[
+          { num: "1", title: "Understand", desc: "We embed with your team. Shadow the workflow. Map the pain points. Define what success looks like." },
+          { num: "2", title: "Prototype", desc: "Working prototype in 2–4 weeks. Not a wireframe. Something you can use. Tested with real users." },
+          { num: "3", title: "Validate", desc: "Does it actually work? Does the team use it? Is the output reliable? We measure before we scale." },
+          { num: "4", title: "Ship", desc: "Production-ready. Integrated with your systems. Documentation and training included. You own what we build." }
+        ].map(step => (
+          <div>
+            <div class="w-10 h-10 rounded-full bg-ms-green-500/10 border border-ms-green-500/20 flex items-center justify-center text-ms-green-400 font-bold text-sm mb-4">
+              {step.num}
+            </div>
+            <h3 class="text-lg font-bold mb-2">{step.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-3xl mx-auto px-6 py-24">
+      <h2 class="text-3xl font-bold mb-12">Principles.</h2>
+      <ul class="space-y-8">
+        <li>
+          <h3 class="text-lg font-bold mb-2">Technology-agnostic.</h3>
+          <p class="text-gray-400">We use whatever works. OpenAI, Anthropic, open source, or a combination. The model is a detail, not a religion.</p>
+        </li>
+        <li>
+          <h3 class="text-lg font-bold mb-2">Privacy-first.</h3>
+          <p class="text-gray-400">Your data stays yours. We design for on-premise or private cloud when required. EU AI Act and GDPR compliance is baseline, not an add-on.</p>
+        </li>
+        <li>
+          <h3 class="text-lg font-bold mb-2">Built to transfer.</h3>
+          <p class="text-gray-400">We don't create dependencies. Your team should be able to maintain and extend what we build.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA buttonText="Tell Us What You Need" />
+
+</Layout>

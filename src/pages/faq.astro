@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import CTA from '../components/CTA.astro';
+
+const faqs = [
+  {
+    q: "What does a discovery call look like?",
+    a: "30 minutes. No slides, no pitch. We ask about your business, your challenges, and what you've tried so far. You ask us whatever you want. At the end, we'll tell you honestly whether we can help. If we can't, we'll point you to someone who can."
+  },
+  {
+    q: "How much does this cost?",
+    a: "Workshops start at €5,000 for a half-day session. Strategy engagements typically range from €15,000 to €50,000 depending on scope and duration. Custom AI solutions are scoped individually. We know \"it depends\" is annoying. That's why we offer a free discovery call, so we can give you a real number based on your actual situation."
+  },
+  {
+    q: "We're not a tech company. Is this relevant for us?",
+    a: "Especially for you. Tech companies already have AI teams. The Mittelstand (manufacturing, logistics, professional services, healthcare) is where AI creates the biggest relative advantage. You don't need to become a tech company. You need to become a company that uses technology well."
+  },
+  {
+    q: "How is this different from what McKinsey or Accenture offers?",
+    a: "They send a team of junior consultants with a framework. We send a senior founder who's actually built AI products. No intermediaries, no 50-page decks designed to justify the next engagement. We're smaller, faster, and more honest about what AI can and can't do."
+  },
+  {
+    q: "How long does a typical engagement take?",
+    a: "Workshops: 1 day (plus 1–2 weeks preparation). Strategy projects: 6–12 weeks. Custom solutions: 4–16 weeks depending on complexity. We don't do multi-year retainers. We do focused work with clear end dates."
+  },
+  {
+    q: "Do you work with startups?",
+    a: "Sometimes. If you're pre-product and need help figuring out where AI fits, yes. If you're looking for a cheap outsourced AI team, no. We're best when there's a real business problem to solve."
+  },
+  {
+    q: "Can you help us pick the right AI tools?",
+    a: "Yes, and we're vendor-agnostic. We don't resell software or take referral fees. Our recommendation is based entirely on what fits your needs, your data, your budget, and your team's ability to maintain it."
+  },
+  {
+    q: "What industries do you work with?",
+    a: "We've worked across manufacturing, media, financial services, professional services, and the arts. Our approach is transferable. We're not industry specialists, we're AI strategists who learn your industry fast."
+  }
+];
+---
+
+<Layout title="FAQ" description="Questions we actually get asked.">
+
+  <PageHero
+    label="FAQ"
+    title='Questions we actually <span class="text-ms-green-400">get asked.</span>'
+  />
+
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-3xl mx-auto px-6 py-24">
+      <div class="space-y-8">
+        {faqs.map(faq => (
+          <div class="border-b border-white/5 pb-8">
+            <h3 class="text-xl font-bold mb-4">{faq.q}</h3>
+            <p class="text-gray-400 leading-relaxed">{faq.a}</p>
+          </div>
+        ))}
+
+        <!-- German Easter Egg -->
+        <div class="border-b border-white/5 pb-8">
+          <h3 class="text-xl font-bold mb-4">Was soll ich tun, wenn ich kein Englisch spreche?</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Keine Sorge, Dr. Röder spricht fließend Deutsch (und lebt in Salzburg). Die Website ist auf Englisch, weil unsere Arbeit international ist. Ihr Gespräch, Ihr Workshop und alle Unterlagen können selbstverständlich auf Deutsch sein. Rufen Sie einfach an.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+
+</Layout>

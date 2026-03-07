@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Layout title="Speaking & Keynotes" description="Keynotes that change how your audience thinks about AI.">
+
+  <PageHero
+    label="Speaking"
+    title='Keynotes that change how your audience <span class="text-ms-green-400">thinks about AI.</span>'
+    subtitle="Dr. Matthias Röder doesn't give presentations. He tells stories. About finishing Beethoven's symphony with AI, about what happens when organizations stop treating technology as a threat."
+  />
+
+  <!-- Topics -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16">Signature topics.</h2>
+      <div class="space-y-8">
+
+        <div class="bg-ms-dark-700 border border-white/5 rounded-2xl p-8 md:p-10">
+          <h3 class="text-xl md:text-2xl font-bold mb-4">The Beethoven X Story: What AI and a 200-Year-Old Symphony Teach Us About Innovation</h3>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            The full story of how a team of musicians, AI researchers, and one very ambitious conductor completed Beethoven's unfinished 10th Symphony. What went right, what nearly failed, and what every leader can learn from it.
+          </p>
+          <p class="text-sm text-gray-500">Best for: Leadership summits, innovation conferences, corporate events</p>
+        </div>
+
+        <div class="bg-ms-dark-700 border border-white/5 rounded-2xl p-8 md:p-10">
+          <h3 class="text-xl md:text-2xl font-bold mb-4">Leading Through the AI Shift</h3>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            Your workforce is scared, excited, confused, or all three. This talk cuts through the hype and gives leaders a practical framework for bringing their organization along, without the change management theater.
+          </p>
+          <p class="text-sm text-gray-500">Best for: Executive offsites, board retreats, management conferences</p>
+        </div>
+
+        <div class="bg-ms-dark-700 border border-white/5 rounded-2xl p-8 md:p-10">
+          <h3 class="text-xl md:text-2xl font-bold mb-4">AI × Creativity: Why the Most Important AI Skill Isn't Technical</h3>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            Everyone's talking about prompt engineering. The real skill is knowing what to ask, and that's a creative problem, not a technical one. Why the organizations that treat AI as a creativity amplifier will win.
+          </p>
+          <p class="text-sm text-gray-500">Best for: Innovation events, creative industries, cross-functional audiences</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Format -->
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl font-bold mb-12">Format.</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          { title: "Keynote", desc: "30–60 minutes + Q&A" },
+          { title: "Panel Moderation", desc: "Available as moderator for AI/innovation panels" },
+          { title: "Workshop + Keynote Combo", desc: "Keynote for the large group, deep-dive workshop for the leadership team" },
+          { title: "Languages", desc: "English, German" }
+        ].map(item => (
+          <div class="flex gap-4 items-start">
+            <div class="w-2 h-2 rounded-full bg-ms-green-400 mt-2.5 shrink-0"></div>
+            <div>
+              <p class="text-white font-medium">{item.title}</p>
+              <p class="text-gray-400 text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    headline='Book Dr. Röder for <span class="text-ms-green-400">your event.</span>'
+    sub="Tell us about your event: audience, theme, date, format. We'll get back to you within 48 hours."
+    buttonText="Book for Your Event"
+  />
+
+</Layout>

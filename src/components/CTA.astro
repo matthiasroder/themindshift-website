@@ -1,0 +1,25 @@
+---
+interface Props {
+  headline?: string;
+  sub?: string;
+  buttonText?: string;
+  buttonHref?: string;
+}
+
+const {
+  headline = 'Ready to stop talking about AI and <span class="text-ms-green-400">start using it?</span>',
+  sub = "A 30-minute discovery call. No pitch deck. We listen, ask the right questions, and tell you honestly whether we can help.",
+  buttonText = "Book a Discovery Call",
+  buttonHref = "/contact"
+} = Astro.props;
+---
+
+<section class="bg-ms-dark-900">
+  <div class="max-w-6xl mx-auto px-6 py-24 text-center">
+    <h2 class="text-3xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight" set:html={headline} />
+    <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">{sub}</p>
+    <a href={buttonHref} class="inline-block mt-10 bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-10 py-4 rounded-full font-semibold text-lg transition">
+      {buttonText}
+    </a>
+  </div>
+</section>

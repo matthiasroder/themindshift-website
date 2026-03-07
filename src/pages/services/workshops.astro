@@ -1,0 +1,134 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Layout title="Executive AI Workshops" description="AI workshops that end with decisions, not just inspiration. Half-day and full-day sessions for leadership teams.">
+
+  <PageHero
+    label="Services"
+    title='AI workshops that end with <span class="text-ms-green-400">decisions</span>, not just inspiration.'
+    subtitle="Most AI workshops leave executives impressed but paralyzed. Ours leave them with a prioritized action plan built on their actual business."
+  />
+
+  <!-- Problem -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-3xl mx-auto px-6 py-24">
+      <p class="text-lg text-gray-400 leading-relaxed">
+        Your leadership team has sat through vendor demos. They've seen the ChatGPT magic tricks. Some are excited, some are skeptical, most are quietly unsure what to do next.
+      </p>
+      <p class="mt-4 text-lg text-white font-medium">
+        That gap between "AI is interesting" and "here's what we're doing Monday morning" is where companies lose months. Sometimes years.
+      </p>
+    </div>
+  </section>
+
+  <!-- What happens -->
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16">What happens in a workshop.</h2>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">Morning</p>
+          <h3 class="text-2xl font-bold mb-6">Understand</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex gap-3">
+              <span class="text-ms-green-400 mt-1">→</span>
+              <span><strong class="text-white">AI landscape briefing: A guided tour of what's real, what's hype, and what matters for your industry. With live demonstrations on your actual use cases.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-ms-green-400 mt-1">→</span>
+              <span><strong class="text-white">Your company under the microscope: We map your processes, pain points, and data landscape together. Where is time being wasted? Where are decisions being made on gut feel?</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">Afternoon</p>
+          <h3 class="text-2xl font-bold mb-6">Decide</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex gap-3">
+              <span class="text-ms-green-400 mt-1">→</span>
+              <span><strong class="text-white">Use case identification: 15-30 potential AI applications specific to your business. Grounded in your reality.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-ms-green-400 mt-1">→</span>
+              <span><strong class="text-white">Prioritization matrix: Every use case scored on business value, feasibility, and risk.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-ms-green-400 mt-1">→</span>
+              <span><strong class="text-white">Action roadmap: Who does what, by when, with what resources.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">What you walk away with.</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          "A prioritized use case shortlist (scored and ranked)",
+          "A 90-day action plan with owners and milestones",
+          "A shared vocabulary across your leadership team",
+          "An honest assessment of your AI readiness, including strengths and gaps"
+        ].map(item => (
+          <div class="flex gap-4 items-start">
+            <div class="w-2 h-2 rounded-full bg-ms-green-400 mt-2.5 shrink-0"></div>
+            <p class="text-lg text-gray-300">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Format -->
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">Format options.</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
+          <h3 class="text-xl font-bold mb-2">Half-Day</h3>
+          <p class="text-ms-green-400 text-sm mb-4">4 hours</p>
+          <ul class="space-y-2 text-gray-400">
+            <li>Best for: Leadership alignment, quick assessment</li>
+            <li>Group size: 5–15 executives</li>
+            <li>Delivery: On-site or virtual</li>
+          </ul>
+        </div>
+        <div class="bg-ms-dark-800 border border-ms-green-500/20 rounded-2xl p-8">
+          <h3 class="text-xl font-bold mb-2">Full-Day</h3>
+          <p class="text-ms-green-400 text-sm mb-4">8 hours</p>
+          <ul class="space-y-2 text-gray-400">
+            <li>Best for: Deep dive, use case development, full roadmap</li>
+            <li>Group size: 8–20 executives + key staff</li>
+            <li>Delivery: On-site recommended</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Not this -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-3xl mx-auto px-6 py-24">
+      <h2 class="text-3xl font-bold mb-8">This is not</h2>
+      <ul class="space-y-3 text-lg text-gray-400">
+        <li class="flex gap-3"><span class="text-gray-600">✕</span> A sales pitch for a specific AI tool</li>
+        <li class="flex gap-3"><span class="text-gray-600">✕</span> A technical deep dive (though we go as deep as you want)</li>
+        <li class="flex gap-3"><span class="text-gray-600">✕</span> A one-size-fits-all presentation</li>
+      </ul>
+      <p class="mt-8 text-lg text-gray-300">
+        We prepare every workshop specifically for your company. We study your industry, your competitors, and your public data before we walk in. You'll notice.
+      </p>
+    </div>
+  </section>
+
+  <CTA buttonText="Book a Workshop" />
+
+</Layout>
