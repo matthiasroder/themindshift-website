@@ -9,6 +9,17 @@
   const ctx = canvas.getContext('2d')!;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let animationFrameId = 0;
+  const isMobileViewport = () => window.innerWidth < 768;
+  const getParticleTarget = () => {
+    const area = canvas.offsetWidth * canvas.offsetHeight;
+    const byArea = Math.round(area / 9000);
+    const min = isMobileViewport() ? 55 : 110;
+    const max = isMobileViewport() ? 95 : 180;
+    return Math.max(min, Math.min(max, byArea));
+  };
+  const getAttractorTarget = () => (isMobileViewport() ? 3 : 5);
+  const getSparkSpawnInterval = () => (isMobileViewport() ? 40 : 25);
+  const getConnectionDistance = () => (isMobileViewport() ? 70 : 100);
 
   let width: number, height: number;
   let particles: Particle[] = [];
@@ -116,11 +127,14 @@
     particles = [];
     attractors = [];
     sparks = [];
+    explosions = [];
 
-    for (let i = 0; i < 160; i++) {
+    const particleTarget = getParticleTarget();
+    const attractorTarget = getAttractorTarget();
+    for (let i = 0; i < particleTarget; i++) {
       particles.push(createParticle());
     }
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < attractorTarget; i++) {
       attractors.push(createAttractor());
     }
   }
@@ -210,7 +224,8 @@
     }
 
     // Crossover: every ~40 frames, breed two fit particles
-    if (frame % 80 === 0 && particles.length < 200) {
+    const particleCap = getParticleTarget() + 20;
+    if (frame % 80 === 0 && particles.length < particleCap) {
       const sorted = [...particles].sort((a, b) => b.fitness - a.fitness);
       if (sorted.length >= 2) {
         const child = crossover(sorted[0], sorted[1]);
@@ -219,7 +234,7 @@
     }
 
     // Sparks: spawn new free radicals
-    if (frame % 25 === 0) {
+    if (frame % getSparkSpawnInterval() === 0) {
       sparks.push(createSpark());
     }
 
@@ -313,8 +328,9 @@
         const dy = a.y - b.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 100) {
-          const lineAlpha = (1 - dist / 100) * Math.min(a.alpha, b.alpha) * 0.5;
+        const connectionDistance = getConnectionDistance();
+        if (dist < connectionDistance) {
+          const lineAlpha = (1 - dist / connectionDistance) * Math.min(a.alpha, b.alpha) * 0.5;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
