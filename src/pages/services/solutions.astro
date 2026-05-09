@@ -4,38 +4,51 @@ import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
 ---
 
-<Layout title="Custom AI Solutions" description="When off-the-shelf AI doesn't fit, we build what does.">
+<Layout title="AI Automation Systems" description="We design and implement custom AI automations for recurring, process-heavy work.">
 
   <PageHero
     label="Services"
-    title='When off-the-shelf AI doesn&apos;t fit, <span class="text-ms-green-400">we build what does.</span>'
-    subtitle="Sometimes the right tool doesn't exist yet. You need an AI solution that understands your workflows, speaks your language, and integrates with systems you already run."
+    title='Turn recurring work into <span class="text-ms-green-400">reliable AI systems.</span>'
+    subtitle="Most companies already know where time gets lost. Weekly reports. Client follow-ups. Research summaries. Internal coordination. Document handling. We turn those workflows into dependable operating systems for your business."
   />
 
-  <!-- What we build -->
   <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-3xl mx-auto px-6 py-24">
+      <p class="text-lg text-gray-400 leading-relaxed">
+        The problem is usually not a lack of ideas. It is the pile of recurring work that everyone knows is necessary, nobody enjoys doing, and no one has had the time to redesign.
+      </p>
+      <p class="mt-4 text-lg text-white font-medium leading-relaxed">
+        The Mindshift identifies the right use cases, designs the workflow, connects the required tools, and builds automations that fit the way your team already works.
+      </p>
+      <p class="mt-4 text-lg text-gray-400 leading-relaxed">
+        The result is not generic AI output. It is a practical system tailored to your processes, quality standards, and communication style.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-ms-dark-900">
     <div class="max-w-6xl mx-auto px-6 py-24">
-      <h2 class="text-3xl md:text-4xl font-bold mb-16">What we build.</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-16">What we automate.</h2>
       <div class="grid md:grid-cols-2 gap-8">
         {[
           {
-            title: "Internal AI Assistants",
-            desc: "AI that knows your company: your processes, your documents, your terminology. Not a generic chatbot. A tool your team actually uses because it saves them real time."
+            title: "Research & Summaries",
+            desc: "Market scans, competitor monitoring, briefings, internal summaries, and other recurring knowledge work that currently disappears into scattered tabs and rushed notes."
           },
           {
-            title: "Decision Support Systems",
-            desc: "AI that surfaces the right information at the right moment. For executives making investment decisions, managers allocating resources, or teams triaging requests."
+            title: "Reporting & Follow-Ups",
+            desc: "Weekly reports, client updates, meeting follow-ups, and recurring communication workflows that need consistency, speed, and the right context."
           },
           {
-            title: "Process Automation",
-            desc: "Intelligent automation that handles the gray areas, where rules-based systems fail and human judgment is expensive. Document processing, classification, routing, quality checks."
+            title: "Document Handling",
+            desc: "Classification, extraction, routing, drafting, and quality checks for documents that move through your business every day."
           },
           {
-            title: "Prototypes & MVPs",
-            desc: "Not sure if an idea has legs? We build fast, functional prototypes to validate concepts before you commit to a full build. Weeks, not months."
+            title: "Internal Coordination",
+            desc: "Operational workflows where information needs to move cleanly between people, tools, and decisions without constant manual handoffs."
           }
         ].map(item => (
-          <div class="bg-ms-dark-700 border border-white/5 rounded-2xl p-8">
+          <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
             <h3 class="text-xl font-bold mb-3">{item.title}</h3>
             <p class="text-gray-400 leading-relaxed">{item.desc}</p>
           </div>
@@ -44,16 +57,36 @@ import CTA from '../../components/CTA.astro';
     </div>
   </section>
 
-  <!-- How we build -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">What we deliver.</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          "Workflow discovery to identify the highest-value automation opportunities",
+          "Custom AI workflows built around your real processes",
+          "Context and instruction design so outputs match your standards and voice",
+          "Tool integrations for research, documents, email, internal knowledge, and communications",
+          "Testing, refinement, and rollout with your team",
+          "Documentation and handover so the system remains usable and maintainable"
+        ].map(item => (
+          <div class="flex gap-4 items-start">
+            <div class="w-2 h-2 rounded-full bg-ms-green-400 mt-2.5 shrink-0"></div>
+            <p class="text-lg text-gray-300">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="bg-ms-dark-900">
     <div class="max-w-6xl mx-auto px-6 py-24">
-      <h2 class="text-3xl md:text-4xl font-bold mb-16">How we build.</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-16">How we work.</h2>
       <div class="grid md:grid-cols-4 gap-8">
         {[
-          { num: "1", title: "Understand", desc: "We embed with your team. Shadow the workflow. Map the pain points. Define what success looks like." },
-          { num: "2", title: "Prototype", desc: "Working prototype in 2–4 weeks. Not a wireframe. Something you can use. Tested with real users." },
-          { num: "3", title: "Validate", desc: "Does it actually work? Does the team use it? Is the output reliable? We measure before we scale." },
-          { num: "4", title: "Ship", desc: "Production-ready. Integrated with your systems. Documentation and training included. You own what we build." }
+          { num: "1", title: "Discover", desc: "We analyze where recurring work consumes time, where bottlenecks appear, and which workflows are best suited for automation." },
+          { num: "2", title: "Design", desc: "We define the workflow, the required inputs and outputs, the decision points, and the quality controls needed for reliable execution." },
+          { num: "3", title: "Build", desc: "We create the automation system, connect the necessary tools, and adapt the setup to your operating reality." },
+          { num: "4", title: "Deploy", desc: "We test the system on real work, refine it with your team, and improve it until it produces dependable results." }
         ].map(step => (
           <div>
             <div class="w-10 h-10 rounded-full bg-ms-green-500/10 border border-ms-green-500/20 flex items-center justify-center text-ms-green-400 font-bold text-sm mb-4">
@@ -67,27 +100,64 @@ import CTA from '../../components/CTA.astro';
     </div>
   </section>
 
-  <!-- Principles -->
   <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl font-bold mb-12">Best fit.</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          "Teams losing hours every week to recurring operational tasks",
+          "Organizations that want practical AI implementation, not another strategy deck",
+          "Businesses that need tailored workflows rather than off-the-shelf tooling",
+          "Leadership teams that care about speed, quality, and integration into existing operations"
+        ].map(item => (
+          <div class="bg-ms-dark-700 border border-white/5 rounded-2xl p-8">
+            <p class="text-lg text-gray-300 leading-relaxed">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-ms-dark-900">
     <div class="max-w-3xl mx-auto px-6 py-24">
       <h2 class="text-3xl font-bold mb-12">Principles.</h2>
       <ul class="space-y-8">
+        <li>
+          <h3 class="text-lg font-bold mb-2">Built around workflows, not demos.</h3>
+          <p class="text-gray-400">We start with the work your team actually does, not with a flashy model demo looking for a problem.</p>
+        </li>
         <li>
           <h3 class="text-lg font-bold mb-2">Technology-agnostic.</h3>
           <p class="text-gray-400">We use whatever works. OpenAI, Anthropic, open source, or a combination. The model is a detail, not a religion.</p>
         </li>
         <li>
-          <h3 class="text-lg font-bold mb-2">Privacy-first.</h3>
-          <p class="text-gray-400">Your data stays yours. We design for on-premise or private cloud when required. EU AI Act and GDPR compliance is baseline, not an add-on.</p>
+          <h3 class="text-lg font-bold mb-2">Built to transfer.</h3>
+          <p class="text-gray-400">We do not create dependencies for their own sake. Your team should be able to operate, maintain, and extend what we build.</p>
         </li>
         <li>
-          <h3 class="text-lg font-bold mb-2">Built to transfer.</h3>
-          <p class="text-gray-400">We don't create dependencies. Your team should be able to maintain and extend what we build.</p>
+          <h3 class="text-lg font-bold mb-2">Quality still matters.</h3>
+          <p class="text-gray-400">The sweet spot is work that is repetitive enough to standardize, valuable enough to justify investment, and important enough that oversight still matters.</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <CTA buttonText="Tell Us What You Need" />
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-3xl mx-auto px-6 py-24">
+      <h2 class="text-3xl font-bold mb-8">What changes.</h2>
+      <p class="text-lg text-gray-400 leading-relaxed">
+        Typical outcomes include faster turnaround times, fewer manual handoffs, more consistent output, and measurable time savings across teams.
+      </p>
+      <p class="mt-4 text-lg text-white font-medium leading-relaxed">
+        If your team is spending too much time on repeatable work, we can identify where AI automation will create the most value and build the right system with you.
+      </p>
+    </div>
+  </section>
+
+  <CTA
+    headline='Too much repeatable work, not enough leverage?'
+    sub="Start with a discovery call. We will identify where AI automation can create real value in your workflow and whether this is the right entry point for your business."
+    buttonText="Discuss Your Workflow"
+  />
 
 </Layout>
