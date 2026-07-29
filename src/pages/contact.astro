@@ -3,7 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 ---
 
-<Layout title="Contact" description="Book a discovery call or send us a message.">
+<Layout
+  title="Book an AI Discovery Call"
+  description="Book a free 30-minute AI discovery call with The Mindshift or send us a message. Based in Salzburg and working across Europe."
+>
 
   <PageHero
     label="Contact"
@@ -22,6 +25,7 @@ import PageHero from '../components/PageHero.astro';
             30 minutes. Free. No obligations. We'll listen to your situation and tell you honestly if and how we can help.
           </p>
           <a href="https://calendar.app.google/H72LRQ2RAgXyN4oS9" target="_blank" rel="noopener"
+            data-conversion="calendar-booking" data-placement="contact-primary"
             class="block bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
             Book a Discovery Call →
           </a>
@@ -33,7 +37,8 @@ import PageHero from '../components/PageHero.astro';
           <p class="text-gray-400 leading-relaxed mb-8">
             Rather write? Tell us what's on your mind.
           </p>
-          <a href="mailto:info@themindshift.global?subject=The%20Mindshift%20—%20Inquiry" 
+          <a href="mailto:info@themindshift.global?subject=The%20Mindshift%20—%20Inquiry"
+            data-conversion="email-inquiry" data-placement="contact-secondary"
             class="block border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full font-semibold text-lg transition text-center">
             ✉️ info@themindshift.global
           </a>

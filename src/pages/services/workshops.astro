@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
+import RelatedInsight from '../../components/RelatedInsight.astro';
 ---
 
 <Layout title="Executive AI Workshops" description="AI workshops that end with decisions, not just inspiration. Half-day and full-day sessions for leadership teams.">
@@ -129,6 +130,12 @@ import CTA from '../../components/CTA.astro';
     </div>
   </section>
 
-  <CTA buttonText="Book a Workshop" />
+  <RelatedInsight
+    href="/insights/ideas-are-everything"
+    title="Ideas Are Everything"
+    description="Why cheaper execution makes clear ideas, judgment, and fast experiments more valuable."
+  />
+
+  <CTA buttonText="Book a Workshop" placement="workshops-footer" />
 
 </Layout>

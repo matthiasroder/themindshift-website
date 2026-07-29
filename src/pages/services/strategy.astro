@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
+import RelatedInsight from '../../components/RelatedInsight.astro';
 ---
 
 <Layout title="AI Strategy & Transformation" description="From 'we should do something with AI' to a strategy your board can fund.">
@@ -110,6 +111,12 @@ import CTA from '../../components/CTA.astro';
     </div>
   </section>
 
-  <CTA />
+  <RelatedInsight
+    href="/insights/the-halo-organization"
+    title="The Halo Organization: Why Your AI Pilots Keep Failing"
+    description="Why AI transformation depends on organizational design, not just technology selection."
+  />
+
+  <CTA placement="strategy-footer" />
 
 </Layout>

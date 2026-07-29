@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
+import RelatedInsight from '../../components/RelatedInsight.astro';
 ---
 
 <Layout title="AI Automation Systems" description="We design and implement custom AI automations for recurring, process-heavy work.">
@@ -154,10 +155,17 @@ import CTA from '../../components/CTA.astro';
     </div>
   </section>
 
+  <RelatedInsight
+    href="/insights/execution-is-collapsing"
+    title="Execution Is Collapsing"
+    description="What happens when AI compresses recurring knowledge work from weeks into hours."
+  />
+
   <CTA
     headline='Too much repeatable work, not enough leverage?'
     sub="Start with a discovery call. We will identify where AI automation can create real value in your workflow and whether this is the right entry point for your business."
     buttonText="Discuss Your Workflow"
+    placement="automation-footer"
   />
 
 </Layout>

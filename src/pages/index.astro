@@ -1,9 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import GeneticHero from '../components/GeneticHero.astro';
+
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://themindshift.global/#website',
+      url: 'https://themindshift.global/',
+      name: 'The Mindshift',
+      description: 'AI strategy consulting, executive workshops, custom AI solutions, and automation systems.',
+      publisher: {
+        '@id': 'https://themindshift.global/#organization'
+      }
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://themindshift.global/#organization',
+      name: 'The Mindshift OG',
+      url: 'https://themindshift.global/',
+      email: 'info@themindshift.global',
+      founder: {
+        '@type': 'Person',
+        name: 'Dr. Matthias Röder',
+        url: 'https://themindshift.global/about/'
+      },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Anton-Hochmuth-Str. 6',
+        postalCode: '5020',
+        addressLocality: 'Salzburg',
+        addressCountry: 'AT'
+      }
+    }
+  ]
+};
 ---
 
-<Layout title="AI Strategy & Custom Solutions" description="The Mindshift helps leadership teams cut through the AI noise, find the opportunities that matter, and build the confidence to act.">
+<Layout title="AI Strategy & Custom Solutions" description="The Mindshift helps leadership teams cut through the AI noise, find the opportunities that matter, and build the confidence to act." schema={siteSchema}>
 
   <!-- HERO -->
   <section class="relative min-h-[90vh] flex items-center overflow-hidden">
@@ -23,7 +58,7 @@ import GeneticHero from '../components/GeneticHero.astro';
         Every executive knows AI matters. Few know where to start. We help leadership teams cut through the noise, find the real opportunities, and build the confidence to act.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row gap-4">
-        <a href="/contact" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
+        <a href="/contact" data-conversion="discovery-call" data-placement="homepage-hero" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
           Book a Discovery Call
         </a>
         <a href="/work/beethoven-x" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full font-medium text-lg transition text-center">
@@ -181,7 +216,7 @@ import GeneticHero from '../components/GeneticHero.astro';
       <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">
         A 30-minute discovery call. No pitch deck. We listen, ask the right questions, and tell you honestly whether we can help.
       </p>
-      <a href="/contact" class="inline-block mt-10 bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-10 py-4 rounded-full font-semibold text-lg transition">
+      <a href="/contact" data-conversion="discovery-call" data-placement="homepage-footer" class="inline-block mt-10 bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-10 py-4 rounded-full font-semibold text-lg transition">
         Book a Discovery Call
       </a>
     </div>

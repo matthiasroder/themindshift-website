@@ -4,7 +4,10 @@ import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
 ---
 
-<Layout title="Beethoven X" description="We used AI to finish Beethoven's 10th Symphony. Then the world listened.">
+<Layout
+  title="AI Case Study: Beethoven X"
+  description="How a team led by Dr. Matthias Röder used AI and human expertise to complete Beethoven's unfinished 10th Symphony for Deutsche Telekom."
+>
 
   <!-- Hero with background image -->
   <section class="relative overflow-hidden min-h-[70vh] flex items-end">
@@ -94,6 +97,9 @@ import CTA from '../../components/CTA.astro';
     </div>
   </section>
 
-  <CTA headline='Have a challenge that needs <span class="text-ms-green-400">a different kind of thinking?</span>' />
+  <CTA
+    headline='Have a challenge that needs <span class="text-ms-green-400">a different kind of thinking?</span>'
+    placement="beethoven-case-study-footer"
+  />
 
 </Layout>

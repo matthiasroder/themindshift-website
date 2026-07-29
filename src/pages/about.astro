@@ -2,9 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import CTA from '../components/CTA.astro';
+
+const profileSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': 'https://themindshift.global/about/',
+  url: 'https://themindshift.global/about/',
+  name: 'About Dr. Matthias Röder',
+  mainEntity: {
+    '@type': 'Person',
+    '@id': 'https://themindshift.global/about/#matthias-roeder',
+    name: 'Dr. Matthias Röder',
+    jobTitle: 'AI Strategist and Founder',
+    image: 'https://themindshift.global/images/matthias-roeder.jpg',
+    worksFor: {
+      '@type': 'Organization',
+      '@id': 'https://themindshift.global/#organization',
+      name: 'The Mindshift OG'
+    }
+  }
+};
 ---
 
-<Layout title="About" description="What happens when a musician learns to think in algorithms.">
+<Layout
+  title="Dr. Matthias Röder — AI Strategist & Founder"
+  description="Meet Dr. Matthias Röder, founder of The Mindshift, known for leading Beethoven X and helping leadership teams turn AI into action."
+  schema={profileSchema}
+>
 
   <PageHero
     label="About"
