@@ -1,0 +1,75 @@
+---
+const analyticsEndpoint = import.meta.env.PUBLIC_ANALYTICS_ENDPOINT;
+---
+
+{analyticsEndpoint && <meta name="mindshift-analytics-endpoint" content={analyticsEndpoint} />}
+
+<script>
+  type AnalyticsEvent = {
+    event: 'page_view' | 'conversion_click';
+    path: string;
+    referrerHost: string | null;
+    placement?: string;
+    target?: string;
+    timestamp: string;
+  };
+
+  const referrerHost = (() => {
+    if (!document.referrer) return null;
+
+    try {
+      return new URL(document.referrer).hostname;
+    } catch {
+      return null;
+    }
+  })();
+
+  const analyticsEndpoint = document
+    .querySelector<HTMLMetaElement>('meta[name="mindshift-analytics-endpoint"]')
+    ?.content;
+
+  const transmitAnalyticsEvent = (detail: AnalyticsEvent) => {
+    if (!analyticsEndpoint) return;
+
+    const payload = JSON.stringify(detail);
+    const body = new Blob([payload], { type: 'application/json' });
+
+    if (navigator.sendBeacon?.(analyticsEndpoint, body)) return;
+
+    fetch(analyticsEndpoint, {
+      method: 'POST',
+      body: payload,
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true
+    }).catch(() => {});
+  };
+
+  const emitAnalyticsEvent = (detail: AnalyticsEvent) => {
+    window.dispatchEvent(new CustomEvent('mindshift:analytics', { detail }));
+    transmitAnalyticsEvent(detail);
+  };
+
+  emitAnalyticsEvent({
+    event: 'page_view',
+    path: window.location.pathname,
+    referrerHost,
+    timestamp: new Date().toISOString()
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const link = target.closest<HTMLAnchorElement>('a[data-conversion]');
+    if (!link) return;
+
+    emitAnalyticsEvent({
+      event: 'conversion_click',
+      path: window.location.pathname,
+      referrerHost,
+      placement: link.dataset.placement ?? 'unspecified',
+      target: link.dataset.conversion,
+      timestamp: new Date().toISOString()
+    });
+  });
+</script>

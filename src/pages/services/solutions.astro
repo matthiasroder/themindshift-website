@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
+import RelatedInsight from '../../components/RelatedInsight.astro';
 ---
 
 <Layout title="Custom AI Solutions" description="When off-the-shelf AI doesn't fit, we build what does.">
@@ -85,6 +86,12 @@ import CTA from '../../components/CTA.astro';
     </div>
   </section>
 
-  <CTA buttonText="Tell Us What You Need" />
+  <RelatedInsight
+    href="/insights/the-future-is-ambient-ai"
+    title="The Future is Ambient AI"
+    description="Why the next useful AI systems will recede into the background and work from persistent context."
+  />
+
+  <CTA buttonText="Tell Us What You Need" placement="solutions-footer" />
 
 </Layout>

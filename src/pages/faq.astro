@@ -37,9 +37,32 @@ const faqs = [
     a: "We've worked across manufacturing, media, financial services, professional services, and the arts. Our approach is transferable. We're not industry specialists, we're AI strategists who learn your industry fast."
   }
 ];
+
+const germanFaq = {
+  q: "Was soll ich tun, wenn ich kein Englisch spreche?",
+  a: "Keine Sorge, Dr. Röder spricht fließend Deutsch (und lebt in Salzburg). Die Website ist auf Englisch, weil unsere Arbeit international ist. Ihr Gespräch, Ihr Workshop und alle Unterlagen können selbstverständlich auf Deutsch sein. Rufen Sie einfach an."
+};
+
+const allFaqs = [...faqs, germanFaq];
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: allFaqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a
+    }
+  }))
+};
 ---
 
-<Layout title="FAQ" description="Questions we actually get asked.">
+<Layout
+  title="AI Consulting Pricing & FAQ"
+  description="Answers on AI consulting costs, workshop pricing, project timelines, industries, and working with The Mindshift. Book a free 30-minute discovery call."
+  schema={faqSchema}
+>
 
   <PageHero
     label="FAQ"
@@ -49,20 +72,12 @@ const faqs = [
   <section class="bg-ms-dark-800 border-y border-white/5">
     <div class="max-w-3xl mx-auto px-6 py-24">
       <div class="space-y-8">
-        {faqs.map(faq => (
+        {allFaqs.map(faq => (
           <div class="border-b border-white/5 pb-8">
             <h3 class="text-xl font-bold mb-4">{faq.q}</h3>
             <p class="text-gray-400 leading-relaxed">{faq.a}</p>
           </div>
         ))}
-
-        <!-- German Easter Egg -->
-        <div class="border-b border-white/5 pb-8">
-          <h3 class="text-xl font-bold mb-4">Was soll ich tun, wenn ich kein Englisch spreche?</h3>
-          <p class="text-gray-400 leading-relaxed">
-            Keine Sorge, Dr. Röder spricht fließend Deutsch (und lebt in Salzburg). Die Website ist auf Englisch, weil unsere Arbeit international ist. Ihr Gespräch, Ihr Workshop und alle Unterlagen können selbstverständlich auf Deutsch sein. Rufen Sie einfach an.
-          </p>
-        </div>
       </div>
     </div>
   </section>

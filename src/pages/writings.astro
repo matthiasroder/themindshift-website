@@ -1,0 +1,16 @@
+---
+const destination = new URL('/insights/', Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0; url=${destination.href}`} />
+    <link rel="canonical" href={destination} />
+    <title>Writings moved to Insights — The Mindshift</title>
+  </head>
+  <body>
+    <p>Our writing has moved to <a href={destination}>The Mindshift Insights</a>.</p>
+  </body>
+</html>

@@ -5,10 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "verify:seo": "node scripts/verify-seo.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.17.1",

@@ -1,0 +1,22 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+}
+
+const { href, title, description } = Astro.props;
+---
+
+<section class="bg-ms-dark-800 border-y border-white/5">
+  <div class="max-w-3xl mx-auto px-6 py-16">
+    <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-3">Related insight</p>
+    <h2 class="text-2xl font-bold">
+      <a href={href} class="hover:text-ms-green-400 transition">{title}</a>
+    </h2>
+    <p class="mt-3 text-gray-400 leading-relaxed">{description}</p>
+    <a href={href} class="inline-block mt-5 text-ms-green-400 font-semibold hover:text-ms-green-300 transition">
+      Read the article →
+    </a>
+  </div>
+</section>

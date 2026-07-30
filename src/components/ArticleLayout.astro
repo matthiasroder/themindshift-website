@@ -6,18 +6,43 @@ interface Props {
   title: string;
   description: string;
   date: string;
+  relatedService?: {
+    href: string;
+    title: string;
+    description: string;
+  };
 }
 
-const { title, description, date } = Astro.props;
+const { title, description, date, relatedService } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const formatted = new Date(date).toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric'
 });
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: date,
+  mainEntityOfPage: canonicalURL.href,
+  author: {
+    '@type': 'Person',
+    name: 'Dr. Matthias Röder',
+    url: 'https://themindshift.global/about/'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'The Mindshift',
+    url: 'https://themindshift.global/'
+  }
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={articleSchema}>
 
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-ms-dark-900 via-ms-dark-800 to-ms-dark-900"></div>
@@ -85,6 +110,21 @@ const formatted = new Date(date).toLocaleDateString('en-US', {
     }
   </style>
 
-  <CTA />
+  {relatedService && (
+    <section class="bg-ms-dark-900 border-b border-white/5">
+      <div class="max-w-3xl mx-auto px-6 py-16">
+        <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-3">Related service</p>
+        <h2 class="text-2xl font-bold">
+          <a href={relatedService.href} class="hover:text-ms-green-400 transition">{relatedService.title}</a>
+        </h2>
+        <p class="mt-3 text-gray-400 leading-relaxed">{relatedService.description}</p>
+        <a href={relatedService.href} class="inline-block mt-5 text-ms-green-400 font-semibold hover:text-ms-green-300 transition">
+          Explore the service →
+        </a>
+      </div>
+    </section>
+  )}
+
+  <CTA placement="article-footer" />
 
 </Layout>

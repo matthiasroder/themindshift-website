@@ -1,12 +1,24 @@
 ---
 import '../styles/global.css'
+import Analytics from '../components/Analytics.astro';
 
 interface Props {
   title: string;
   description?: string;
+  schema?: Record<string, unknown>;
 }
 
-const { title, description = "AI Strategy and Custom AI Solutions — The Mindshift" } = Astro.props;
+const {
+  title,
+  description = "AI Strategy and Custom AI Solutions — The Mindshift",
+  schema
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = title.includes('The Mindshift') ? title : `${title} — The Mindshift`;
+const structuredData = schema
+  ? JSON.stringify(schema).replace(/</g, '\\u003c')
+  : undefined;
 ---
 
 <!doctype html>
@@ -15,10 +27,21 @@ const { title, description = "AI Strategy and Custom AI Solutions — The Mindsh
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Mindshift" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <title>{title} — The Mindshift</title>
+    {structuredData && <script type="application/ld+json" set:html={structuredData} />}
+    <title>{pageTitle}</title>
   </head>
   <body class="bg-ms-dark-900 text-white font-sans antialiased">
     <nav class="fixed top-0 w-full z-50 bg-ms-dark-900/80 backdrop-blur-md border-b border-white/5">
@@ -32,7 +55,7 @@ const { title, description = "AI Strategy and Custom AI Solutions — The Mindsh
           <a href="/about" class="text-gray-300 hover:text-white transition">About</a>
           <a href="/insights" class="text-gray-300 hover:text-white transition">Insights</a>
           <a href="/faq" class="text-gray-300 hover:text-white transition">FAQ</a>
-          <a href="/contact" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-5 py-2 rounded-full font-semibold transition">
+          <a href="/contact" data-conversion="discovery-call" data-placement="header" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-5 py-2 rounded-full font-semibold transition">
             Book a Call
           </a>
         </div>
@@ -55,7 +78,7 @@ const { title, description = "AI Strategy and Custom AI Solutions — The Mindsh
         <a href="/about" class="block text-gray-300 hover:text-white">About</a>
         <a href="/insights" class="block text-gray-300 hover:text-white">Insights</a>
         <a href="/faq" class="block text-gray-300 hover:text-white">FAQ</a>
-        <a href="/contact" class="block bg-ms-green-500 text-ms-dark-900 px-5 py-2 rounded-full font-semibold text-center">Book a Call</a>
+        <a href="/contact" data-conversion="discovery-call" data-placement="mobile-menu" class="block bg-ms-green-500 text-ms-dark-900 px-5 py-2 rounded-full font-semibold text-center">Book a Call</a>
       </div>
     </nav>
 
@@ -83,5 +106,6 @@ const { title, description = "AI Strategy and Custom AI Solutions — The Mindsh
         mobileMenuButton.setAttribute('aria-expanded', String(isExpanded));
       });
     </script>
+    <Analytics />
   </body>
 </html>
