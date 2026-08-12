@@ -4,56 +4,50 @@ import PageHero from '../components/PageHero.astro';
 ---
 
 <Layout
-  title="Start with an AI Work Audit"
-  description="Find the first workflow worth rebuilding with The Mindshift's focused AI Work Audit."
+  title="Discuss an AI Workflow Scan"
+  description="Bring one business area and identify whether The Mindshift's €2,500 AI Workflow Scan is the right place to begin."
 >
-
   <PageHero
-    label="AI Work Audit"
-    title='Find the first workflow <span class="text-ms-green-400">worth rebuilding.</span>'
-    subtitle="Start with a 30-minute conversation. We will identify the business area to examine and decide whether an audit is the right next move."
+    label="AI Workflow Scan — €2,500"
+    title='Bring the work that is <span class="text-ms-green-400">getting in the way.</span>'
+    subtitle="In 30 minutes, we will test whether there is a useful Scan to run—or tell you plainly if another next step makes more sense."
   />
 
   <section class="bg-ms-dark-800 border-y border-white/5">
-    <div class="max-w-6xl mx-auto px-6 py-24">
-      <div class="grid md:grid-cols-2 gap-16">
+    <div class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16">
+      <div>
+        <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">Book the qualification call</p>
+        <h2 class="text-2xl font-bold mb-4">Talk through the opportunity</h2>
+        <p class="text-gray-400 leading-relaxed mb-6">Bring one business area and two or three candidate workflows that are slow, expensive, inconsistent, or trapped in people's heads. We will test whether they can be compared inside the fixed Scan.</p>
+        <p class="text-gray-300 leading-relaxed mb-8">No deck. No AI theatre. One useful decision.</p>
+        <a href="https://calendar.app.google/H72LRQ2RAgXyN4oS9" target="_blank" rel="noopener"
+          data-conversion="ai-workflow-scan-call" data-placement="contact-primary"
+          class="block bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
+          Book a 30-minute call →
+        </a>
+      </div>
 
-        <!-- Discuss the Audit -->
-        <div>
-          <h2 class="text-2xl font-bold mb-4">Talk through the opportunity</h2>
-          <p class="text-gray-400 leading-relaxed mb-8">
-            Bring one business area where work is slow, expensive, inconsistent, or trapped in people's heads. We will ask a few hard questions and tell you whether it is worth auditing.
-          </p>
-          <a href="https://calendar.app.google/H72LRQ2RAgXyN4oS9" target="_blank" rel="noopener"
-            data-conversion="calendar-booking" data-placement="contact-primary"
-            class="block bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
-            Discuss an AI Work Audit →
-          </a>
-        </div>
-
-        <!-- Send a Message -->
-        <div>
-          <h2 class="text-2xl font-bold mb-4">Send a Message</h2>
-          <p class="text-gray-400 leading-relaxed mb-8">
-            Prefer writing? Tell us which part of your organization you want to improve and what gets in the way today.
-          </p>
-          <a href="mailto:info@themindshift.global?subject=AI%20Work%20Audit%20inquiry"
-            data-conversion="email-inquiry" data-placement="contact-secondary"
-            class="block border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full font-semibold text-lg transition text-center">
-            ✉️ info@themindshift.global
-          </a>
-          <p class="mt-4 text-sm text-gray-500">We respond within 48 hours. Usually faster.</p>
-        </div>
-
+      <div>
+        <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">Prefer writing?</p>
+        <h2 class="text-2xl font-bold mb-4">Send the situation</h2>
+        <p class="text-gray-400 leading-relaxed mb-8">Tell us which part of the organization you want to improve, what repeats, where the friction sits, and what a better outcome would change.</p>
+        <a href="mailto:info@themindshift.global?subject=AI%20Workflow%20Scan%20inquiry"
+          data-conversion="ai-workflow-scan-email" data-placement="contact-secondary"
+          class="block border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full font-semibold text-lg transition text-center">
+          info@themindshift.global
+        </a>
+        <p class="mt-4 text-sm text-gray-500">We respond within 48 hours. Usually faster.</p>
       </div>
     </div>
   </section>
 
-  <!-- Scope -->
   <section class="bg-ms-dark-900">
-    <div class="max-w-6xl mx-auto px-6 py-16 text-center">
-      <p class="text-gray-500">One business area. One priority workflow. Two to three weeks. Based in Salzburg, working across Europe and beyond.</p>
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <div class="grid sm:grid-cols-3 gap-px overflow-hidden rounded-2xl bg-white/5 border border-white/5">
+        <div class="bg-ms-dark-800 p-7"><p class="text-ms-green-400 text-sm font-semibold">SCOPE</p><p class="mt-3 text-white">One business area</p></div>
+        <div class="bg-ms-dark-800 p-7"><p class="text-ms-green-400 text-sm font-semibold">FORMAT</p><p class="mt-3 text-white">Two focused sessions</p></div>
+        <div class="bg-ms-dark-800 p-7"><p class="text-ms-green-400 text-sm font-semibold">PRICE</p><p class="mt-3 text-white">€2,500</p></div>
+      </div>
     </div>
   </section>
-
 </Layout>

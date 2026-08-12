@@ -111,8 +111,9 @@ assert(writings.includes('http-equiv="refresh"'), '/writings: missing redirect')
 assert(writings.includes('https://themindshift.global/insights/'), '/writings: invalid redirect target');
 
 const allHTML = htmlFiles.map((file) => readFileSync(file, 'utf8')).join('\n');
-assert(allHTML.includes('data-conversion="discovery-call"'), 'Missing discovery-call tracking hooks');
-assert(allHTML.includes('data-conversion="calendar-booking"'), 'Missing calendar-booking tracking hook');
+assert(allHTML.includes('data-conversion="ai-workflow-scan"'), 'Missing AI Workflow Scan tracking hooks');
+assert(allHTML.includes('data-conversion="ai-workflow-scan-call"'), 'Missing AI Workflow Scan call tracking hook');
+assert(allHTML.includes('data-conversion="ai-workflow-scan-email"'), 'Missing AI Workflow Scan email tracking hook');
 
 if (failures.length) {
   console.error(`SEO verification failed (${failures.length}):`);

@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title,
-  description = "AI Strategy and Custom AI Solutions — The Mindshift",
+  description = "The Mindshift helps leadership teams find, redesign, build, and scale the workflows where AI can improve real business outcomes.",
   schema
 } = Astro.props;
 
@@ -37,6 +37,7 @@ const structuredData = schema
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -46,8 +47,9 @@ const structuredData = schema
   <body class="bg-ms-dark-900 text-white font-sans antialiased">
     <nav class="fixed top-0 w-full z-50 bg-ms-dark-900/80 backdrop-blur-md border-b border-white/5">
       <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" class="text-xl font-bold tracking-tight">
-          <span class="text-white">The </span><span class="text-ms-green-400">Mindshift</span>
+        <a href="/" class="flex items-center gap-3 text-xl font-bold tracking-tight" aria-label="The Mindshift home">
+          <img src="/mindshift-logo.svg" alt="" width="40" height="40" class="w-10 h-10" />
+          <span><span class="text-white">The </span><span class="text-ms-green-400">Mindshift</span></span>
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm">
           <a href="/services" class="text-gray-300 hover:text-white transition">Services</a>
@@ -55,8 +57,8 @@ const structuredData = schema
           <a href="/about" class="text-gray-300 hover:text-white transition">About</a>
           <a href="/insights" class="text-gray-300 hover:text-white transition">Insights</a>
           <a href="/faq" class="text-gray-300 hover:text-white transition">FAQ</a>
-          <a href="/contact" data-conversion="discovery-call" data-placement="header" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-5 py-2 rounded-full font-semibold transition">
-            Book a Call
+          <a href="/services/workflow-scan" data-conversion="ai-workflow-scan" data-placement="header" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-5 py-2 rounded-full font-semibold transition">
+            Start with a Scan
           </a>
         </div>
         <button
@@ -78,7 +80,7 @@ const structuredData = schema
         <a href="/about" class="block text-gray-300 hover:text-white">About</a>
         <a href="/insights" class="block text-gray-300 hover:text-white">Insights</a>
         <a href="/faq" class="block text-gray-300 hover:text-white">FAQ</a>
-        <a href="/contact" data-conversion="discovery-call" data-placement="mobile-menu" class="block bg-ms-green-500 text-ms-dark-900 px-5 py-2 rounded-full font-semibold text-center">Book a Call</a>
+        <a href="/services/workflow-scan" data-conversion="ai-workflow-scan" data-placement="mobile-menu" class="block bg-ms-green-500 text-ms-dark-900 px-5 py-2 rounded-full font-semibold text-center">Start with a Scan</a>
       </div>
     </nav>
 
@@ -88,8 +90,12 @@ const structuredData = schema
 
     <footer class="border-t border-white/5 mt-24">
       <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
-        <div>© 2026 The Mindshift. All rights reserved.</div>
-        <div class="flex gap-6">
+        <div class="flex items-center gap-3">
+          <img src="/mindshift-logo.svg" alt="" width="36" height="36" class="w-9 h-9 opacity-90" />
+          <span>© 2026 The Mindshift. All rights reserved.</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="https://matthiasroder.com/" class="hover:text-gray-300 transition">For individuals → MatthiasRöder.com</a>
           <a href="/impressum" class="hover:text-gray-300 transition">Impressum</a>
           <a href="/privacy" class="hover:text-gray-300 transition">Datenschutz</a>
         </div>

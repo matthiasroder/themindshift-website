@@ -95,7 +95,7 @@ import RelatedInsight from '../../components/RelatedInsight.astro';
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
           <h3 class="text-xl font-bold mb-2">Half-Day</h3>
-          <p class="text-ms-green-400 text-sm mb-4">4 hours</p>
+          <p class="text-ms-green-400 text-sm mb-4">4 hours · €3,500</p>
           <ul class="space-y-2 text-gray-400">
             <li>Best for: Leadership alignment, quick assessment</li>
             <li>Group size: 5–15 executives</li>
@@ -104,7 +104,7 @@ import RelatedInsight from '../../components/RelatedInsight.astro';
         </div>
         <div class="bg-ms-dark-800 border border-ms-green-500/20 rounded-2xl p-8">
           <h3 class="text-xl font-bold mb-2">Full-Day</h3>
-          <p class="text-ms-green-400 text-sm mb-4">8 hours</p>
+          <p class="text-ms-green-400 text-sm mb-4">8 hours · €5,500</p>
           <ul class="space-y-2 text-gray-400">
             <li>Best for: Deep dive, use case development, full roadmap</li>
             <li>Group size: 8–20 executives + key staff</li>
@@ -136,6 +136,13 @@ import RelatedInsight from '../../components/RelatedInsight.astro';
     description="Why cheaper execution makes clear ideas, judgment, and fast experiments more valuable."
   />
 
-  <CTA buttonText="Book a Workshop" placement="workshops-footer" />
+  <CTA
+    headline='Does the team need alignment before <span class="text-ms-green-400">implementation?</span>'
+    sub="Tell us who needs to decide, what work is in scope, and what the workshop must produce."
+    buttonText="Discuss a Business AI Workshop"
+    buttonHref="/contact"
+    placement="workshops-footer"
+    conversion="business-ai-workshop"
+  />
 
 </Layout>

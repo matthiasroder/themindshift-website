@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Layout title="AI Workflow Build — from €25,000" description="Build and test a complete human-and-AI workflow with agents, knowledge, tools, integrations, decision rights, measurement, training, and handover.">
+  <PageHero label="Build the system — from €25,000" title='Move from workflow design to a system people <span class="text-ms-green-400">actually use.</span>' subtitle="We build, test, measure, train, and hand over the complete human-and-AI workflow—not another isolated demo." />
+  <section class="bg-ms-dark-800 border-y border-white/5"><div class="max-w-6xl mx-auto px-6 py-24"><div class="grid md:grid-cols-3 gap-6">{[['System', 'Agents, knowledge, tools, integrations, and interfaces built around the work.'],['Operating model', 'Decision rights, human checkpoints, escalation, security boundaries, and ownership.'],['Adoption', 'Real-world testing, measurement, training, documentation, and handover.']].map(([title,text]) => <div class="bg-ms-dark-900 border border-white/5 rounded-2xl p-8"><h2 class="text-xl font-bold">{title}</h2><p class="mt-4 text-gray-400 leading-relaxed">{text}</p></div>)}</div></div></section>
+  <section class="bg-ms-dark-900"><div class="max-w-3xl mx-auto px-6 py-20"><p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Named system</p><h2 class="mt-4 text-3xl font-bold">PRGen</h2><p class="mt-5 text-gray-400 leading-relaxed">PRGen demonstrates the shape of a real workflow build: customer-specific style, content workflow, authentication, persistence, revisions, exports, feedback, analytics, and administration. Its SES pilot is awaiting testing feedback and a 2027 budget decision.</p></div></section>
+  <CTA />
+</Layout>
