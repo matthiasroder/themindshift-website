@@ -49,21 +49,36 @@ const siteSchema = {
     <!-- Green glow overlay -->
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-ms-green-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
-    <div class="relative max-w-6xl mx-auto px-6 py-24">
-      <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-[0.2em] mb-5">The Mindshift</p>
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight max-w-4xl">
-        Build an <span class="text-ms-green-400">AI-native organization.</span>
-      </h1>
-      <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
-        We help leadership teams redesign critical workflows, build the agents and systems behind them, and measure what improves.
-      </p>
-      <div class="mt-10 flex flex-col sm:flex-row gap-4">
-        <a href="/services/workflow-scan" data-conversion="ai-workflow-scan" data-placement="homepage-hero" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
-          Start with an AI Workflow Scan
-        </a>
-        <a href="#what-ai-native-means" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full font-medium text-lg transition text-center">
-          What does AI-native mean?
-        </a>
+    <div class="relative w-full max-w-6xl mx-auto px-6 py-24 grid lg:grid-cols-[minmax(0,1fr)_19rem] gap-12 lg:gap-16 items-center">
+      <div>
+        <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-[0.2em] mb-5">The Mindshift</p>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight max-w-4xl">
+          Build an <span class="text-ms-green-400">AI-native organization.</span>
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+          We help leadership teams redesign critical workflows, build the agents and systems behind them, and measure what improves.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="/services/workflow-scan" data-conversion="ai-workflow-scan" data-placement="homepage-hero" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
+            Start with an AI Workflow Scan
+          </a>
+          <a href="#what-ai-native-means" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full font-medium text-lg transition text-center">
+            What does AI-native mean?
+          </a>
+        </div>
+      </div>
+
+      <div class="order-first lg:order-last flex justify-center lg:justify-end" aria-label="The Mindshift Halo logo">
+        <div class="relative">
+          <div class="absolute inset-3 bg-ms-green-500/15 rounded-full blur-3xl" aria-hidden="true"></div>
+          <img
+            src="/mindshift-logo.svg"
+            alt="The Mindshift Halo logo"
+            width="304"
+            height="304"
+            class="relative w-32 h-32 sm:w-44 sm:h-44 lg:w-72 lg:h-72 drop-shadow-[0_0_36px_rgba(74,222,128,0.18)]"
+          />
+        </div>
       </div>
     </div>
   </section>
