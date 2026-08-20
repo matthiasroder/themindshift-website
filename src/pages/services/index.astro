@@ -8,7 +8,6 @@ const pathway = [
     number: '01',
     stage: 'Find the opportunity',
     title: 'AI Workflow Scan',
-    price: '€2,500',
     href: '/services/workflow-scan',
     text: 'Bring two or three candidate workflows. Leave with a management-ready recommendation naming the first one worth pursuing and why.'
   },
@@ -16,7 +15,6 @@ const pathway = [
     number: '02',
     stage: 'Redesign the work',
     title: 'AI Work Audit',
-    price: '€10,000',
     href: '/services/work-audit',
     text: 'Redesign one priority workflow and unlock tangible gains from day one—while establishing the business case, prototype plan, measurement, and operating rules.'
   },
@@ -24,7 +22,6 @@ const pathway = [
     number: '03',
     stage: 'Build the system',
     title: 'AI Workflow Build',
-    price: 'From €25,000',
     href: '/services/workflow-build',
     text: 'Build and test the complete human-and-AI system: agents, knowledge, tools, integrations, decision rights, training, and measurement.'
   },
@@ -32,7 +29,6 @@ const pathway = [
     number: '04',
     stage: 'Scale the model',
     title: 'AI-Native Organization Program',
-    price: 'Custom scope',
     href: '/services/ai-native-organization',
     text: 'Scale successful patterns across teams with reusable infrastructure, governance, capability-building, and an outcomes-led portfolio.'
   }
@@ -62,10 +58,7 @@ const pathway = [
               {index === 0 && <span class="shrink-0 bg-ms-green-500 text-ms-dark-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Start here</span>}
             </div>
             <p class="mt-5 text-lg text-gray-400 leading-relaxed">{offer.text}</p>
-            <div class="mt-8 flex items-center justify-between gap-6">
-              <p class="text-white font-semibold">{offer.price}</p>
-              <p class="text-ms-green-400 font-semibold">Explore →</p>
-            </div>
+            <p class="mt-8 text-ms-green-400 font-semibold">Explore →</p>
           </a>
         ))}
       </div>
@@ -78,7 +71,7 @@ const pathway = [
         <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">Capability when it is needed</p>
         <h2 class="text-3xl md:text-4xl font-bold leading-tight">Workshops support the path. They do not replace it.</h2>
         <p class="mt-6 text-lg text-gray-400 leading-relaxed">A Business AI Workshop creates shared understanding and prioritized use cases when a team needs alignment before or during the work. It can stand alone, but it is not a compulsory toll booth.</p>
-        <a href="/services/workshops" class="inline-block mt-8 text-ms-green-400 font-semibold hover:text-ms-green-300 transition">Business AI Workshop — €3,500 half-day / €5,500 full-day →</a>
+        <a href="/services/workshops" class="inline-block mt-8 text-ms-green-400 font-semibold hover:text-ms-green-300 transition">Explore the Business AI Workshop →</a>
       </div>
       <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
         <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Implementation proof</p>
