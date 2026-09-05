@@ -25,11 +25,27 @@
   --color-ms-dark-700: #1a2520;
   --color-ms-dark-600: #243330;
 
+  --color-ms-body: #c3ccc7;
+  --color-ms-muted: #a2ada6;
+
   /* Fonts */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 html {
+  --site-header-height: 5rem;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--site-header-height) + 1rem);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ms-green-400);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

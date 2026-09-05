@@ -11,17 +11,17 @@ interface Props {
 const {
   headline = 'Find the first workflow <span class="text-ms-green-400">worth rebuilding.</span>',
   sub = "The AI Workflow Scan compares the opportunities, shows the evidence, and gives you a clear next decision.",
-  buttonText = "Explore the AI Workflow Scan",
+  buttonText = "Find your first workflow",
   buttonHref = "/services/workflow-scan",
   placement = "page-footer",
   conversion = "ai-workflow-scan"
 } = Astro.props;
 ---
 
-<section class="bg-ms-dark-900">
+<section id="next-step" class="bg-ms-dark-900">
   <div class="max-w-6xl mx-auto px-6 py-24 text-center">
     <h2 class="text-3xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight" set:html={headline} />
-    <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">{sub}</p>
+    <p class="mt-6 text-lg text-ms-body max-w-xl mx-auto">{sub}</p>
     <a href={buttonHref} data-conversion={conversion} data-placement={placement} class="inline-block mt-10 bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-10 py-4 rounded-full font-semibold text-lg transition">
       {buttonText}
     </a>

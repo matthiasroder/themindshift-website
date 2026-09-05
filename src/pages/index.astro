@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import GeneticHero from '../components/GeneticHero.astro';
+import CTA from '../components/CTA.astro';
 
 const siteSchema = {
   '@context': 'https://schema.org',
@@ -55,12 +56,15 @@ const siteSchema = {
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight max-w-4xl">
           Build an <span class="text-ms-green-400">AI-native organization.</span>
         </h1>
-        <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+        <p class="mt-6 text-lg md:text-xl text-ms-body max-w-2xl leading-relaxed">
           We help leadership teams redesign critical workflows, build the agents and systems behind them, and measure what improves.
         </p>
-        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        <p class="mt-6 text-sm text-ms-body leading-relaxed">
+          <a href="#beethoven-x" class="underline underline-offset-4 decoration-white/30 hover:decoration-ms-green-400 hover:text-white transition">Our founder led Beethoven X</a>, commissioned by Deutsche Telekom.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
           <a href="/services/workflow-scan" data-conversion="ai-workflow-scan" data-placement="homepage-hero" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
-            Start with an AI Workflow Scan
+            Find your first workflow
           </a>
           <a href="#what-ai-native-means" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full font-medium text-lg transition text-center">
             What does AI-native mean?
@@ -83,118 +87,19 @@ const siteSchema = {
     </div>
   </section>
 
-  <!-- DEFINITION -->
-  <section id="what-ai-native-means" class="bg-ms-dark-800 border-y border-white/5 scroll-mt-20">
-    <div class="max-w-6xl mx-auto px-6 py-24">
-      <div class="max-w-3xl">
-        <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">What AI-native means</p>
-        <h2 class="text-3xl md:text-4xl font-bold leading-tight">
-          AI-native changes how work gets done.
-        </h2>
-        <p class="mt-6 text-lg text-gray-400 leading-relaxed">
-          The goal is a better organization: faster where speed matters, more thoughtful where judgment matters, and able to learn as the technology changes.
-        </p>
-      </div>
-
-      <div class="mt-14 grid md:grid-cols-5 gap-px overflow-hidden rounded-2xl bg-white/5 border border-white/5">
-        {[
-          ['01', 'Redesign workflows', 'Start with the work, not the tool.'],
-          ['02', 'Make knowledge usable', 'Give people and agents the context they need.'],
-          ['03', 'Delegate complete work', 'Move beyond isolated prompts and party tricks.'],
-          ['04', 'Protect judgment', 'Define where AI acts and where people decide.'],
-          ['05', 'Measure outcomes', 'Track speed, quality, cost, and business results.']
-        ].map(([number, title, text]) => (
-          <div class="bg-ms-dark-900 p-6">
-            <p class="text-ms-green-400 text-sm font-semibold mb-8">{number}</p>
-            <h3 class="text-lg font-bold leading-tight">{title}</h3>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">{text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="bg-ms-dark-800 border-y border-white/5">
-    <div class="max-w-6xl mx-auto px-6 py-24">
-      <div class="max-w-3xl">
-        <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">The real obstacle</p>
-        <h2 class="text-3xl md:text-4xl font-bold leading-tight">
-          The hard part begins after the demo.
-        </h2>
-        <p class="mt-6 text-lg text-gray-400 leading-relaxed">
-          AI pilots are easy to start. Useful change is harder. Which work is worth rebuilding? What should AI do? What must people decide? And how does a promising prototype become a system people trust and use?
-        </p>
-        <p class="mt-4 text-lg text-white font-medium">
-          You don't need another vendor demo. You need a clear place to start.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMMERCIAL PATH -->
-  <section class="bg-ms-dark-900">
-    <div class="max-w-6xl mx-auto px-6 py-24">
-      <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">How we work</p>
-      <h2 class="text-3xl md:text-4xl font-bold max-w-3xl mb-5">From one critical workflow to an organization that knows how to use AI.</h2>
-      <p class="text-lg text-gray-400 max-w-2xl mb-16">We start with evidence, build what works, then scale it.</p>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div id="ai-workflow-scan" class="bg-ms-dark-800 border border-ms-green-500/30 rounded-2xl p-8 scroll-mt-20 relative">
-          <p class="absolute -top-3 left-6 bg-ms-green-500 text-ms-dark-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Start here</p>
-          <p class="text-ms-green-400 text-sm font-semibold mb-8">01 — Find the opportunity</p>
-          <h3 class="text-xl font-bold mb-3">AI Workflow Scan</h3>
-          <p class="text-gray-400 leading-relaxed">
-            Bring two or three candidate workflows. We compare them and deliver a management-ready recommendation naming the first one worth pursuing.
-          </p>
-          <a href="/services/workflow-scan" class="inline-block mt-6 text-ms-green-400 text-sm font-semibold hover:text-ms-green-300 transition">Explore the Scan →</a>
-        </div>
-
-        <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
-          <p class="text-ms-green-400 text-sm font-semibold mb-8">02 — Redesign the work</p>
-          <h3 class="text-xl font-bold mb-3">AI Work Audit</h3>
-          <p class="text-gray-400 leading-relaxed">
-            We redesign one priority workflow and establish the business case, prototype plan, measurement, and operating rules.
-          </p>
-          <a href="/services/work-audit" class="inline-block mt-6 text-ms-green-400 text-sm font-semibold hover:text-ms-green-300 transition">See the Audit →</a>
-        </div>
-
-        <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
-          <p class="text-ms-green-400 text-sm font-semibold mb-8">03 — Build the system</p>
-          <h3 class="text-xl font-bold mb-3">AI Workflow Build</h3>
-          <p class="text-gray-400 leading-relaxed">
-            We turn the strongest opportunity into a working human-and-AI system: agents, knowledge, tools, decision rights, and measurement. Your team uses it in the real world, not in a demo.
-          </p>
-          <a href="/services/workflow-build" class="inline-block mt-6 text-ms-green-400 text-sm font-semibold hover:text-ms-green-300 transition">See the Build →</a>
-        </div>
-
-        <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
-          <p class="text-ms-green-400 text-sm font-semibold mb-8">04 — Scale the model</p>
-          <h3 class="text-xl font-bold mb-3">AI-Native Organization Program</h3>
-          <p class="text-gray-400 leading-relaxed">
-            Once one workflow works, we help you repeat the model across teams—with reusable infrastructure, governance, capability-building, and a portfolio tied to business outcomes.
-          </p>
-          <a href="/services/ai-native-organization" class="inline-block mt-6 text-ms-green-400 text-sm font-semibold hover:text-ms-green-300 transition">See the Program →</a>
-        </div>
-      </div>
-
-      <p class="mt-10 text-sm text-gray-500 max-w-3xl">Workshops, strategy, automation, and the Halo Method all sit inside this path.</p>
-    </div>
-  </section>
-
   <!-- BEETHOVEN X / PROOF -->
-  <section class="bg-ms-dark-800 border-y border-white/5">
+  <section id="beethoven-x" class="bg-ms-dark-800 border-y border-white/5">
     <div class="max-w-6xl mx-auto px-6 py-24">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">Featured Project</p>
+          <p class="text-ms-green-400 text-sm font-semibold tracking-wide mb-4">Featured project</p>
           <h2 class="text-3xl md:text-4xl font-bold leading-tight">
             We used AI to finish Beethoven's 10th&nbsp;Symphony.
           </h2>
-          <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+          <p class="mt-6 text-lg text-ms-body leading-relaxed">
             Commissioned by Deutsche Telekom. Premiered in Bonn. Covered by BBC, CNN, The New York Times, and 2,000+ media outlets worldwide.
           </p>
-          <p class="mt-4 text-lg text-gray-300 leading-relaxed">
+          <p class="mt-4 text-lg text-ms-body leading-relaxed">
             It worked because technology did not replace human judgment. It gave experts a new system for doing work that had been impossible before.
           </p>
           <a href="/work/beethoven-x" class="inline-block mt-8 text-ms-green-400 font-semibold hover:text-ms-green-300 transition">
@@ -208,23 +113,123 @@ const siteSchema = {
     </div>
   </section>
 
+  <!-- DEFINITION -->
+  <section id="what-ai-native-means" class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <div class="max-w-3xl">
+        <p class="text-ms-green-400 text-sm font-semibold tracking-wide mb-4">What AI-native means</p>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+          AI-native changes how work gets done.
+        </h2>
+        <p class="mt-6 text-lg text-ms-body leading-relaxed">
+          The goal is a better organization: faster where speed matters, more thoughtful where judgment matters, and able to learn as the technology changes.
+        </p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-6 min-[68.75rem]:grid-cols-5 gap-px overflow-hidden rounded-2xl bg-white/5 border border-white/5">
+        {[
+          ['01', 'Redesign workflows', 'Start with the work, not the tool.'],
+          ['02', 'Make knowledge usable', 'Give people and agents the context they need.'],
+          ['03', 'Delegate complete work', 'Move beyond isolated prompts and party tricks.'],
+          ['04', 'Protect judgment', 'Define where AI acts and where people decide.'],
+          ['05', 'Measure outcomes', 'Track speed, quality, cost, and business results.']
+        ].map(([number, title, text]) => (
+          <div class:list={[
+            'bg-ms-dark-900 p-6 min-[68.75rem]:col-span-1',
+            number === '01' || number === '02' ? 'md:col-span-3' : 'md:col-span-2'
+          ]}>
+            <p class="text-ms-green-400 text-sm font-semibold mb-8">{number}</p>
+            <h3 class="text-lg font-bold leading-tight">{title}</h3>
+            <p class="mt-3 text-sm text-ms-muted leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="bg-ms-dark-800 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <div class="max-w-3xl">
+        <p class="text-ms-green-400 text-sm font-semibold tracking-wide mb-4">The real obstacle</p>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+          The hard part begins after the demo.
+        </h2>
+        <p class="mt-6 text-lg text-ms-body leading-relaxed">
+          AI pilots are easy to start. Useful change is harder. Which work is worth rebuilding? What should AI do? What must people decide? And how does a promising prototype become a system people trust and use?
+        </p>
+        <p class="mt-4 text-lg text-white font-medium">
+          You don't need another vendor demo. You need a clear place to start.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMERCIAL PATH -->
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <p class="text-ms-green-400 text-sm font-semibold tracking-wide mb-4">How we work</p>
+      <h2 class="text-3xl md:text-4xl font-bold max-w-3xl mb-5">From one critical workflow to an organization that knows how to use AI.</h2>
+      <p class="text-lg text-ms-body max-w-2xl mb-16">We start with evidence, build what works, then scale it.</p>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div id="ai-workflow-scan" class="bg-ms-dark-800 border border-ms-green-500/30 rounded-2xl p-8 relative">
+          <p class="absolute -top-3 left-6 bg-ms-green-500 text-ms-dark-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Start here</p>
+          <p class="text-ms-green-400 text-sm font-semibold mb-8">01 — Find the opportunity</p>
+          <h3 class="text-xl font-bold mb-3">AI Workflow Scan</h3>
+          <p class="text-ms-body leading-relaxed">
+            Bring two or three candidate workflows. We compare them and deliver a management-ready recommendation naming the first one worth pursuing.
+          </p>
+          <a href="/services/workflow-scan" class="inline-block mt-6 text-ms-green-400 text-sm font-semibold hover:text-ms-green-300 transition">What the Scan includes →</a>
+        </div>
+
+        <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
+          <p class="text-ms-green-400 text-sm font-semibold mb-8">02 — Redesign the work</p>
+          <h3 class="text-xl font-bold mb-3">AI Work Audit</h3>
+          <p class="text-ms-body leading-relaxed">
+            We redesign one priority workflow and establish the business case, prototype plan, measurement, and operating rules.
+          </p>
+          <a href="/services/work-audit" class="inline-block mt-6 text-ms-green-400 text-sm font-semibold hover:text-ms-green-300 transition">See the Audit →</a>
+        </div>
+
+        <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
+          <p class="text-ms-green-400 text-sm font-semibold mb-8">03 — Build the system</p>
+          <h3 class="text-xl font-bold mb-3">AI Workflow Build</h3>
+          <p class="text-ms-body leading-relaxed">
+            We turn the strongest opportunity into a working human-and-AI system: agents, knowledge, tools, decision rights, and measurement. Your team uses it in the real world, not in a demo.
+          </p>
+          <a href="/services/workflow-build" class="inline-block mt-6 text-ms-green-400 text-sm font-semibold hover:text-ms-green-300 transition">See the Build →</a>
+        </div>
+
+        <div class="bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
+          <p class="text-ms-green-400 text-sm font-semibold mb-8">04 — Scale the model</p>
+          <h3 class="text-xl font-bold mb-3">AI-Native Organization Program</h3>
+          <p class="text-ms-body leading-relaxed">
+            Once one workflow works, we help you repeat the model across teams—with reusable infrastructure, governance, capability-building, and a portfolio tied to business outcomes.
+          </p>
+          <a href="/services/ai-native-organization" class="inline-block mt-6 text-ms-green-400 text-sm font-semibold hover:text-ms-green-300 transition">See the Program →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOUNDER -->
   <section class="bg-ms-dark-900">
     <div class="max-w-6xl mx-auto px-6 py-24">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div class="rounded-2xl overflow-hidden max-w-sm border border-white/5">
           <img src="/images/matthias-roeder.jpg" alt="Dr. Matthias Röder" class="w-full h-auto" />
-          <p class="text-xs text-gray-600 mt-2 px-1">Photo: Philipp Gladsome</p>
+          <p class="text-xs text-ms-muted mt-2 px-1">Photo: Philipp Gladsome</p>
         </div>
         <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider mb-4">The Founder</p>
+          <p class="text-ms-green-400 text-sm font-semibold tracking-wide mb-4">The founder</p>
           <h2 class="text-3xl md:text-4xl font-bold leading-tight">
             Matthias Röder led Beethoven X. Now he brings the same discipline to organizations.
           </h2>
-          <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+          <p class="mt-6 text-lg text-ms-body leading-relaxed">
             Dr. Matthias Röder. Former Managing Director of the Herbert von Karajan estate, founder of the Karajan Music Tech Conference, and the person who led the team that used AI to complete Beethoven's unfinished 10th Symphony.
           </p>
-          <p class="mt-4 text-lg text-gray-300">
+          <p class="mt-4 text-lg text-ms-body">
             Now he helps leadership teams turn AI from a collection of tools into a new way of working.
           </p>
           <a href="/about" class="inline-block mt-8 text-ms-green-400 font-semibold hover:text-ms-green-300 transition">
@@ -238,8 +243,8 @@ const siteSchema = {
   <!-- PRESS / SOCIAL PROOF -->
   <section class="bg-ms-dark-800 border-y border-white/5">
     <div class="max-w-6xl mx-auto px-6 py-16 text-center">
-      <p class="text-sm text-gray-500 uppercase tracking-wider mb-8">As seen in</p>
-      <div class="flex flex-wrap items-center justify-center gap-12 text-gray-600 text-lg font-medium">
+      <p class="text-sm text-ms-muted tracking-wide mb-8">As seen in</p>
+      <div class="flex flex-wrap items-center justify-center gap-12 text-ms-muted text-lg font-medium">
         <span>BBC</span>
         <span>CNN</span>
         <span>The New York Times</span>
@@ -250,20 +255,9 @@ const siteSchema = {
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="bg-ms-dark-900">
-    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
-      <h2 class="text-3xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight">
-        Find the first workflow
-        <span class="text-ms-green-400">worth rebuilding.</span>
-      </h2>
-      <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">
-        The AI Workflow Scan compares the opportunities and gives you a ranked, evidence-based place to begin.
-      </p>
-      <a href="/services/workflow-scan" data-conversion="ai-workflow-scan" data-placement="homepage-footer" class="inline-block mt-10 bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-10 py-4 rounded-full font-semibold text-lg transition">
-        Start with an AI Workflow Scan
-      </a>
-    </div>
-  </section>
+  <CTA
+    placement="homepage-footer"
+    sub="The AI Workflow Scan compares the opportunities and gives you a ranked, evidence-based place to begin."
+  />
 
 </Layout>
