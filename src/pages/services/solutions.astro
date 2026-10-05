@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
 import RelatedInsight from '../../components/RelatedInsight.astro';
+import DeliveryPathway from '../../components/DeliveryPathway.astro';
 ---
 
 <Layout title="Custom AI Solutions" description="When off-the-shelf AI doesn't fit, we build what does.">
@@ -11,6 +12,11 @@ import RelatedInsight from '../../components/RelatedInsight.astro';
     label="Services"
     title='When off-the-shelf AI doesn&apos;t fit, <span class="text-ms-green-400">we build what does.</span>'
     subtitle="Sometimes the right tool doesn't exist yet. You need an AI solution that understands your workflows, speaks your language, and integrates with systems you already run."
+  />
+
+  <DeliveryPathway
+    headline="Custom solutions are part of AI Workflow Build."
+    intro="The Audit defines the workflow, business case, and build requirements. The Build turns that design into a tested system with agreed integrations, training, documentation, and handover. If you are still choosing the workflow, begin with a Scan."
   />
 
   <section class="bg-ms-dark-800 border-y border-white/5">
@@ -50,7 +56,7 @@ import RelatedInsight from '../../components/RelatedInsight.astro';
       <div class="grid md:grid-cols-4 gap-8">
         {[
           { num: "1", title: "Understand", desc: "We embed with your team. Shadow the workflow. Map the pain points. Define what success looks like." },
-          { num: "2", title: "Prototype", desc: "Working prototype in 2–4 weeks. Not a wireframe. Something you can use. Tested with real users." },
+          { num: "2", title: "Prototype", desc: "Build a functional prototype around the agreed workflow. Set the timeline from the scope, dependencies, and access available." },
           { num: "3", title: "Validate", desc: "Does it actually work? Does the team use it? Is the output reliable? We measure before we scale." },
           { num: "4", title: "Ship", desc: "Production-ready. Integrated with your systems. Documentation and training included. You own what we build." }
         ].map(step => (

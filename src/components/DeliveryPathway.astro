@@ -1,0 +1,33 @@
+---
+interface Props {
+  headline: string;
+  intro: string;
+}
+
+const { headline, intro } = Astro.props;
+const offers = [
+  { stage: 'Find the opportunity', title: 'AI Workflow Scan', href: '/services/workflow-scan', text: 'Compare up to three candidate workflows in one business area and receive a recommendation about where to invest.' },
+  { stage: 'Redesign the work', title: 'AI Work Audit', href: '/services/work-audit', text: 'Redesign one priority workflow and establish its business case, measurement, implementation plan, and operating rules.' },
+  { stage: 'Build the system', title: 'AI Workflow Build', href: '/services/workflow-build', text: 'Build, integrate, and test the agreed system, then train your team and hand over the documentation and responsibilities.' },
+  { stage: 'Scale the model', title: 'AI-Native Organization Program', href: '/services/ai-native-organization', text: 'Extend proven workflow patterns across teams with reusable infrastructure, governance, and capability-building.' }
+];
+---
+
+<section class="bg-ms-dark-800 border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Part of the delivery pathway</p>
+    <h2 class="mt-4 text-2xl md:text-3xl font-bold max-w-3xl">{headline}</h2>
+    <p class="mt-5 text-lg text-gray-400 leading-relaxed max-w-3xl">{intro}</p>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {offers.map(offer => (
+        <a href={offer.href} class="group block bg-ms-dark-900 border border-white/10 hover:border-ms-green-500/40 rounded-2xl p-6 transition">
+          <p class="text-ms-green-400 text-xs font-semibold uppercase tracking-wider">{offer.stage}</p>
+          <h3 class="mt-3 text-lg font-bold group-hover:text-ms-green-400 transition">{offer.title}</h3>
+          <p class="mt-4 text-sm text-gray-400 leading-relaxed">{offer.text}</p>
+          <p class="mt-5 text-ms-green-400 text-sm font-semibold">Explore →</p>
+        </a>
+      ))}
+    </div>
+    <p class="mt-6 text-sm text-gray-400 leading-relaxed">The Scan is the usual starting point when you are choosing a workflow. If the priority is already clear, we can begin with an Audit or Build. We agree scope and responsibilities before delivery.</p>
+  </div>
+</section>

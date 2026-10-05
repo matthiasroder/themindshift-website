@@ -2,14 +2,20 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
+import DeliveryPathway from '../../components/DeliveryPathway.astro';
 ---
 
-<Layout title="The Halo Method" description="A transformation methodology for moving organizations from hierarchy to halo. The Mindshift leaves behind an operating system, not a recommendation.">
+<Layout title="The Halo Method" description="The organizational design method behind The Mindshift’s workflow redesign, implementation, and AI-Native Organization Program.">
 
   <PageHero
     label="Services"
     title='From hierarchy to <span class="text-ms-green-400">halo.</span>'
-    subtitle="A transformation methodology that installs the infrastructure for AI-driven coordination. We leave behind an operating system, not a recommendation."
+    subtitle="Our method for designing knowledge, coordination, and decision rights around human-and-AI work. Applied through the Audit, Build, and AI-Native Organization Program."
+  />
+
+  <DeliveryPathway
+    headline="The Halo Method guides the work. The offers define what we deliver."
+    intro="The Scan recommends a starting workflow. The Audit designs that workflow and its operating rules. The Build implements the agreed system. The Program scales proven patterns across teams. Halo provides the design principles inside this pathway."
   />
 
   <!-- The Problem -->
@@ -31,23 +37,23 @@ import CTA from '../../components/CTA.astro';
     </div>
   </section>
 
-  <!-- Phases -->
+  <!-- Areas of work -->
   <section class="bg-ms-dark-900">
     <div class="max-w-6xl mx-auto px-6 py-24 space-y-20">
 
-      <h2 class="text-3xl md:text-4xl font-bold">Five phases. Each builds on the last.</h2>
+      <h2 class="text-3xl md:text-4xl font-bold">Five areas of work. Applied where needed.</h2>
 
-      <!-- Phase 1 -->
+      <!-- Workstream 1 -->
       <div class="grid md:grid-cols-[200px_1fr] gap-8">
         <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Phase 1</p>
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Workstream 1</p>
         </div>
         <div>
           <h3 class="text-2xl md:text-3xl font-bold mb-6">Make Knowledge Machine-Readable</h3>
-          <p class="text-lg text-gray-400 mb-6">The AI coordinator can only work with what it can see. Most organizational knowledge lives in three places: documents, tools and systems, and people's heads. Phase 1 makes the first two available.</p>
+          <p class="text-lg text-gray-400 mb-6">The AI coordinator can only work with what it can see. Most organizational knowledge lives in three places: documents, tools and systems, and people's heads. The first workstream makes the relevant documents and systems available within the agreed scope.</p>
           <ul class="space-y-3 text-gray-400">
             <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Audit existing knowledge artifacts:</strong> documents, wikis, Slack, email, project management, code, CRM, ERP</span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Build ingestion pipelines</strong> from every system into a unified, AI-accessible layer</span></li>
+            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Build ingestion pipelines</strong> from the systems needed for the workflow into an AI-accessible layer with agreed access controls</span></li>
             <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Establish the company world model:</strong> a continuously updated picture of what's being built, what's blocked, what's working</span></li>
             <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Define data standards:</strong> what gets captured, in what format, at what frequency</span></li>
           </ul>
@@ -60,10 +66,10 @@ import CTA from '../../components/CTA.astro';
 
       <div class="border-t border-white/5"></div>
 
-      <!-- Phase 2 -->
+      <!-- Workstream 2 -->
       <div class="grid md:grid-cols-[200px_1fr] gap-8">
         <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Phase 2</p>
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Workstream 2</p>
         </div>
         <div>
           <h3 class="text-2xl md:text-3xl font-bold mb-6">Eliminate Shadow Data</h3>
@@ -83,32 +89,32 @@ import CTA from '../../components/CTA.astro';
 
       <div class="border-t border-white/5"></div>
 
-      <!-- Phase 3 -->
+      <!-- Workstream 3 -->
       <div class="grid md:grid-cols-[200px_1fr] gap-8">
         <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Phase 3</p>
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Workstream 3</p>
         </div>
         <div>
           <h3 class="text-2xl md:text-3xl font-bold mb-6">Install Continuous Ingestion</h3>
-          <p class="text-lg text-gray-400 mb-6">Phases 1 and 2 are snapshots. Phase 3 makes it a living system.</p>
+          <p class="text-lg text-gray-400 mb-6">Knowledge mapping and capture establish the starting point. Continuous ingestion keeps the agreed sources current.</p>
           <ul class="space-y-3 text-gray-400">
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Automate ingestion</strong> from all organizational tools — documents, conversations, decisions, code changes, customer signals flow in automatically</span></li>
+            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Automate ingestion</strong> from agreed organizational tools, with clear permissions, update frequency, and ownership</span></li>
             <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Build feedback loops:</strong> when humans encounter new information or intuition, there's a frictionless path to feed it back into the system</span></li>
             <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">The world model updates continuously,</strong> not on a reporting cycle</span></li>
           </ul>
           <div class="mt-8 bg-ms-dark-700 rounded-xl p-4 border border-white/5">
             <p class="text-sm text-gray-500">Deliverable</p>
-            <p class="text-white font-medium">The AI coordinator always has current, complete context.</p>
+            <p class="text-white font-medium">A system that updates the agreed sources and makes information gaps visible.</p>
           </div>
         </div>
       </div>
 
       <div class="border-t border-white/5"></div>
 
-      <!-- Phase 4 -->
+      <!-- Workstream 4 -->
       <div class="grid md:grid-cols-[200px_1fr] gap-8">
         <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Phase 4</p>
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Workstream 4</p>
         </div>
         <div>
           <h3 class="text-2xl md:text-3xl font-bold mb-6">Earn Autonomy</h3>
@@ -129,10 +135,10 @@ import CTA from '../../components/CTA.astro';
 
       <div class="border-t border-white/5"></div>
 
-      <!-- Phase 5 -->
+      <!-- Workstream 5 -->
       <div class="grid md:grid-cols-[200px_1fr] gap-8">
         <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Phase 5</p>
+          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Workstream 5</p>
         </div>
         <div>
           <h3 class="text-2xl md:text-3xl font-bold mb-6">Empower Humans to Create</h3>
@@ -152,7 +158,7 @@ import CTA from '../../components/CTA.astro';
               <p class="text-gray-400">Develop themselves and other people, develop the AI, develop the organization. Build the capacity to realize what has been sensed and directed.</p>
             </div>
           </div>
-          <p class="text-lg text-gray-400">No one routes information. No one coordinates across silos. No one sits in alignment meetings. The AI does that. Humans sense, direct, and grow — and that is how they create.</p>
+          <p class="text-lg text-gray-400">AI can take on suitable information routing and coordination tasks as evidence supports it. People retain responsibility for priorities, judgment, and exceptions. They sense, direct, and grow — and that is how they create.</p>
           <div class="mt-8 bg-ms-dark-700 rounded-xl p-4 border border-white/5">
             <p class="text-sm text-gray-500">Deliverable</p>
             <p class="text-white font-medium">A Halo Organization — distributed, intelligent, creative.</p>
@@ -167,26 +173,26 @@ import CTA from '../../components/CTA.astro';
   <section class="bg-ms-dark-800 border-y border-white/5">
     <div class="max-w-4xl mx-auto px-6 py-24">
       <h2 class="text-3xl md:text-4xl font-bold mb-8">An operating system, not a slide deck.</h2>
-      <p class="text-lg text-gray-400 mb-10">Each phase installs running software on your infrastructure. The Mindshift leaves behind a system that works — not a recommendation to implement later.</p>
+      <p class="text-lg text-gray-400 mb-10">The Audit defines the workflow and operating rules. The Build implements and tests the software within the agreed scope, then provides training, documentation, and handover. The Program extends proven patterns across teams. The areas below are selected and sequenced to fit the work; they are not five compulsory engagements.</p>
       <div class="space-y-4">
         <div class="grid grid-cols-[140px_1fr] gap-4 items-start border-b border-white/5 pb-4">
-          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Phase 1</p>
+          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Workstream 1</p>
           <p class="text-gray-400">Data ingestion layer + company world model</p>
         </div>
         <div class="grid grid-cols-[140px_1fr] gap-4 items-start border-b border-white/5 pb-4">
-          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Phase 2</p>
+          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Workstream 2</p>
           <p class="text-gray-400">Decision trails + context capture tools</p>
         </div>
         <div class="grid grid-cols-[140px_1fr] gap-4 items-start border-b border-white/5 pb-4">
-          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Phase 3</p>
+          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Workstream 3</p>
           <p class="text-gray-400">Automated feeds + human feedback loops</p>
         </div>
         <div class="grid grid-cols-[140px_1fr] gap-4 items-start border-b border-white/5 pb-4">
-          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Phase 4</p>
+          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Workstream 4</p>
           <p class="text-gray-400">Earned Autonomy Gradient monitoring (δ metrics)</p>
         </div>
         <div class="grid grid-cols-[140px_1fr] gap-4 items-start">
-          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Phase 5</p>
+          <p class="text-ms-green-400 font-semibold text-sm uppercase tracking-wider">Workstream 5</p>
           <p class="text-gray-400">Ambient AI coordination — intelligence routed to whoever needs it</p>
         </div>
       </div>

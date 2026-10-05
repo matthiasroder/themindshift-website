@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
 import RelatedInsight from '../../components/RelatedInsight.astro';
+import DeliveryPathway from '../../components/DeliveryPathway.astro';
 ---
 
 <Layout title="AI Automation Systems" description="We design and implement custom AI automations for recurring, process-heavy work.">
@@ -11,6 +12,11 @@ import RelatedInsight from '../../components/RelatedInsight.astro';
     label="Services"
     title='Turn recurring work into <span class="text-ms-green-400">reliable AI systems.</span>'
     subtitle="Most companies already know where time gets lost. Weekly reports. Client follow-ups. Research summaries. Internal coordination. Document handling. We turn those workflows into dependable operating systems for your business."
+  />
+
+  <DeliveryPathway
+    headline="Automation is delivered through AI Workflow Build."
+    intro="Use the Scan to choose the opportunity and the Audit to redesign it where needed. The Build delivers the agreed automation, integrations, testing, training, and handover. The examples below show the kinds of work that can fit that scope."
   />
 
   <section class="bg-ms-dark-800 border-y border-white/5">
@@ -87,7 +93,7 @@ import RelatedInsight from '../../components/RelatedInsight.astro';
           { num: "1", title: "Discover", desc: "We analyze where recurring work consumes time, where bottlenecks appear, and which workflows are best suited for automation." },
           { num: "2", title: "Design", desc: "We define the workflow, the required inputs and outputs, the decision points, and the quality controls needed for reliable execution." },
           { num: "3", title: "Build", desc: "We create the automation system, connect the necessary tools, and adapt the setup to your operating reality." },
-          { num: "4", title: "Deploy", desc: "We test the system on real work, refine it with your team, and improve it until it produces dependable results." }
+          { num: "4", title: "Test & hand over", desc: "We test against agreed success criteria, refine the system with your team, and document how to operate and maintain it." }
         ].map(step => (
           <div>
             <div class="w-10 h-10 rounded-full bg-ms-green-500/10 border border-ms-green-500/20 flex items-center justify-center text-ms-green-400 font-bold text-sm mb-4">

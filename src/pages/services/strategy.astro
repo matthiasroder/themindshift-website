@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
 import RelatedInsight from '../../components/RelatedInsight.astro';
+import DeliveryPathway from '../../components/DeliveryPathway.astro';
 ---
 
 <Layout title="AI Strategy & Transformation" description="From 'we should do something with AI' to a strategy your board can fund.">
@@ -13,80 +14,39 @@ import RelatedInsight from '../../components/RelatedInsight.astro';
     subtitle="Most companies don't fail at AI because the technology isn't ready. They fail because they never built the bridge between opportunity and execution."
   />
 
-  <!-- Phases -->
-  <section class="bg-ms-dark-800 border-y border-white/5">
-    <div class="max-w-6xl mx-auto px-6 py-24 space-y-20">
+  <DeliveryPathway
+    headline="Strategy connects the business decision to delivery."
+    intro="Strategy is part of Scan, Audit, Build, and Program. We define the workflow, establish the case for change, and build or coordinate the system with clear responsibilities for your team and ours. Each engagement has its own agreed scope and output."
+  />
 
-      <!-- Phase 1 -->
-      <div class="grid md:grid-cols-[200px_1fr] gap-8">
+  <section class="bg-ms-dark-900">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">The decisions behind a useful AI investment.</h2>
+      <div class="grid md:grid-cols-2 gap-10">
         <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Phase 1</p>
-          <p class="text-gray-500 text-sm mt-1">2–3 weeks</p>
+          <h3 class="text-2xl font-bold mb-5">Choose work worth changing.</h3>
+          <p class="text-lg text-gray-400 mb-6">The Scan compares candidate workflows in one business area. It gives you a recommendation about where to begin, the evidence behind it, and the prerequisites for the next move.</p>
+          <ul class="space-y-3 text-gray-400">
+            <li>→ Business value, current friction, feasibility, and risk</li>
+            <li>→ Knowledge available and decisions that need human judgment</li>
+            <li>→ Reasons to proceed, test internally, or stop</li>
+          </ul>
         </div>
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold mb-6">AI Readiness Assessment</h2>
-          <p class="text-lg text-gray-400 mb-6">Before we talk about what AI <em>could</em> do, we figure out what your organization <em>can</em> do.</p>
+          <h3 class="text-2xl font-bold mb-5">Make the decision buildable.</h3>
+          <p class="text-lg text-gray-400 mb-6">The Audit examines one selected workflow in depth. We map how the work runs, design the future workflow, and establish the business case and operating rules before a Build.</p>
           <ul class="space-y-3 text-gray-400">
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Technology & data audit: What systems do you run? What data do you have, and how clean is it?</strong></span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Process mapping: Where are the bottlenecks, the manual work, the decisions made on instinct?</strong></span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Culture & skills assessment: How AI-ready is your team? Where's the resistance?</strong></span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Competitive scan: What are your competitors doing with AI?</strong></span></li>
+            <li>→ Systems, data, access, and integration requirements</li>
+            <li>→ Build or buy choices and an implementation plan</li>
+            <li>→ Measurement baseline, ownership, and decision rights</li>
           </ul>
-          <div class="mt-8 bg-ms-dark-700 rounded-xl p-4 border border-white/5">
-            <p class="text-sm text-gray-500">Deliverable</p>
-            <p class="text-white font-medium">AI Readiness Report. A clear picture of where you stand, where the gaps are, and what's realistic.</p>
-          </div>
         </div>
       </div>
-
-      <div class="border-t border-white/5"></div>
-
-      <!-- Phase 2 -->
-      <div class="grid md:grid-cols-[200px_1fr] gap-8">
-        <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Phase 2</p>
-          <p class="text-gray-500 text-sm mt-1">3–4 weeks</p>
-        </div>
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold mb-6">Use Case Identification & Business Case</h2>
-          <p class="text-lg text-gray-400 mb-6">The graveyard of AI projects is full of technically impressive solutions to problems nobody had.</p>
-          <ul class="space-y-3 text-gray-400">
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Structured use case discovery: Workshops with leadership and operational teams</strong></span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Prioritization: Business value vs. feasibility vs. risk. No pet projects.</strong></span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Business case development: Expected ROI, investment, timeline, risks</strong></span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Build vs. buy analysis: When to use off-the-shelf, when to build custom, when to wait</strong></span></li>
-          </ul>
-          <div class="mt-8 bg-ms-dark-700 rounded-xl p-4 border border-white/5">
-            <p class="text-sm text-gray-500">Deliverable</p>
-            <p class="text-white font-medium">AI Strategy Document. A prioritized roadmap with business cases your CFO can actually approve.</p>
-          </div>
-        </div>
+      <div class="mt-12 bg-ms-dark-800 border border-white/5 rounded-2xl p-8">
+        <h3 class="text-xl font-bold">Carry the strategy into the work.</h3>
+        <p class="mt-4 text-gray-400 leading-relaxed">AI Workflow Build covers implementation, testing, training, and handover within the agreed scope. The AI-Native Organization Program extends proven patterns across teams with governance and shared infrastructure. A Business AI Workshop can support alignment when needed.</p>
+        <a href="/services/workshops" class="inline-block mt-5 text-ms-green-400 font-semibold hover:text-ms-green-300 transition">Explore the Business AI Workshop →</a>
       </div>
-
-      <div class="border-t border-white/5"></div>
-
-      <!-- Phase 3 -->
-      <div class="grid md:grid-cols-[200px_1fr] gap-8">
-        <div>
-          <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-wider">Phase 3</p>
-          <p class="text-gray-500 text-sm mt-1">Ongoing</p>
-        </div>
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold mb-6">Implementation Support</h2>
-          <p class="text-lg text-gray-400 mb-6">Strategy without execution is a PDF that gathers dust.</p>
-          <ul class="space-y-3 text-gray-400">
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Pilot design: Scope, success criteria, kill criteria</strong></span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Vendor selection: Technology-agnostic. We help you pick what works.</strong></span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Change management: Training, communication, getting buy-in</strong></span></li>
-            <li class="flex gap-3"><span class="text-ms-green-400">→</span> <span><strong class="text-white">Progress reviews: Regular check-ins to course-correct early</strong></span></li>
-          </ul>
-          <div class="mt-8 bg-ms-dark-700 rounded-xl p-4 border border-white/5">
-            <p class="text-sm text-gray-500">Deliverable</p>
-            <p class="text-white font-medium">A running AI pilot with measurable results, not another proof of concept.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -100,8 +60,8 @@ import RelatedInsight from '../../components/RelatedInsight.astro';
           <p class="text-gray-400">Not just strategy decks. Our founder led Beethoven X, one of the most ambitious AI creativity projects in history. We know what it takes to go from idea to something real.</p>
         </div>
         <div>
-          <h3 class="text-lg font-bold mb-3">We don't sell implementation.</h3>
-          <p class="text-gray-400">If you need a systems integrator, we'll help you find the right one. We're not trying to extend the engagement. We're trying to make you self-sufficient.</p>
+          <h3 class="text-lg font-bold mb-3">We build and hand over.</h3>
+          <p class="text-gray-400">We build within the agreed scope and coordinate specialist partners where needed. Testing, training, documentation, and clear ownership help your team operate and maintain the system.</p>
         </div>
         <div>
           <h3 class="text-lg font-bold mb-3">We speak executive, not engineer.</h3>
