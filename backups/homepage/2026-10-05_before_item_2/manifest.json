@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-10-05T11:33:03.015826+02:00",
+  "purpose": "Backup before website playbook item 2",
+  "published_commit": "4f98b3952d621664a0279594b40d77231f724f5b",
+  "published_url": "https://themindshift.global/",
+  "source_target": "src/pages/index.astro",
+  "files": {
+    "index.astro": "Exact local source before editing, including two unpublished organization/address schema corrections",
+    "published_index.astro": "Exact source from the current published commit",
+    "published_index.html": "HTML fetched from the public homepage before editing",
+    "published_desktop.jpg": "Screenshot of the public homepage before editing"
+  },
+  "restore": "Copy published_index.astro to src/pages/index.astro to restore the published page, or index.astro to restore the local page. Review, build, then deploy. Related components and assets remain in this repository.",
+  "sha256": {
+    "index.astro": "569de72b64e92a810310032ad29d064be414ee001c917b5ce9dbc4c5e7db083a",
+    "published_index.astro": "8021063002681cf8be93efa6307c274f7d5fe813ff4404c6b142fa4165b512e3",
+    "published_index.html": "6faf3a52309fc4f0721be3964ce3e32267ad4bc68d12ea0d472bae402255ac9c",
+    "published_desktop.jpg": "69efa11611890409cfa246f13f9683e0149a7e97dbfde78e99402fe7967c9317"
+  }
+}

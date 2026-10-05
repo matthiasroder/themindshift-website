@@ -19,7 +19,7 @@ const siteSchema = {
     {
       '@type': 'Organization',
       '@id': 'https://themindshift.global/#organization',
-      name: 'The Mindshift OG',
+      name: 'The Mindshift e.U.',
       url: 'https://themindshift.global/',
       email: 'info@themindshift.global',
       founder: {
@@ -29,7 +29,7 @@ const siteSchema = {
       },
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Anton-Hochmuth-Str. 6',
+        streetAddress: 'Anton-Hochmuth-Straße 6',
         postalCode: '5020',
         addressLocality: 'Salzburg',
         addressCountry: 'AT'
@@ -39,72 +39,51 @@ const siteSchema = {
 };
 ---
 
-<Layout title="Make AI Useful in Everyday Work" description="Move beyond isolated AI pilots. Choose a valuable workflow, redesign it, and build a system your team can use. Start with an AI Workflow Scan." schema={siteSchema}>
+<Layout title="Build an AI-Native Organization" description="The Mindshift helps leadership teams redesign critical workflows, build the agents and systems behind them, and measure what improves." schema={siteSchema}>
 
   <!-- HERO -->
-  <section aria-labelledby="homepage-heading" class="relative overflow-hidden">
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <!-- Gradient background -->
     <div class="absolute inset-0 bg-gradient-to-br from-ms-dark-900 via-ms-dark-800 to-ms-dark-900"></div>
+    <!-- Genetic algorithm animation -->
     <GeneticHero />
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-ms-green-500/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <!-- Green glow overlay -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-ms-green-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
-    <div class="relative w-full max-w-6xl mx-auto px-6 pt-8 pb-10 md:py-16 lg:py-20 grid lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] gap-6 lg:gap-12 items-center">
+    <div class="relative w-full max-w-6xl mx-auto px-6 py-24 grid lg:grid-cols-[minmax(0,1fr)_19rem] gap-12 lg:gap-16 items-center">
       <div>
-        <p class="text-ms-green-400 text-xs md:text-sm font-semibold leading-relaxed mb-4">For leadership teams ready to move beyond isolated AI pilots</p>
-        <h1 id="homepage-heading" class="text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.08] tracking-tight max-w-2xl">
-          Make AI useful in the work your team <span class="text-ms-green-400">does every day.</span>
+        <p class="text-ms-green-400 text-sm font-semibold uppercase tracking-[0.2em] mb-5">The Mindshift</p>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight max-w-4xl">
+          Build an <span class="text-ms-green-400">AI-native organization.</span>
         </h1>
-        <p class="mt-5 text-base md:text-lg text-ms-body max-w-2xl leading-relaxed">
-          We help you choose a valuable workflow, redesign how it runs, and build a system your people can use and maintain. Start with one business area and a clear decision about where to invest.
+        <p class="mt-6 text-lg md:text-xl text-ms-body max-w-2xl leading-relaxed">
+          We help leadership teams redesign critical workflows, build the agents and systems behind them, and measure what improves.
         </p>
-        <a href="#what-ai-native-means" class="hidden lg:inline-block mt-6 text-sm text-ms-body underline underline-offset-4 decoration-white/30 hover:decoration-ms-green-400 hover:text-white transition">Build an AI-native organization, one workflow at a time →</a>
+        <p class="mt-6 text-sm text-ms-body leading-relaxed">
+          <a href="#beethoven-x" class="underline underline-offset-4 decoration-white/30 hover:decoration-ms-green-400 hover:text-white transition">Our founder led Beethoven X</a>, commissioned by Deutsche Telekom.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="/services/workflow-scan" data-conversion="ai-workflow-scan" data-placement="homepage-hero" class="bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
+            Find your first workflow
+          </a>
+          <a href="#what-ai-native-means" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full font-medium text-lg transition text-center">
+            What does AI-native mean?
+          </a>
+        </div>
       </div>
 
-      <aside aria-labelledby="hero-scan-heading" class="bg-ms-dark-900/90 border border-ms-green-500/30 rounded-2xl p-5 md:p-8">
-        <h2 id="hero-scan-heading" class="text-lg md:text-xl font-bold">AI Workflow Scan</h2>
-        <p class="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-ms-green-400">€2,500</p>
-        <p class="mt-1 text-xs md:text-sm text-ms-muted">Excluding VAT where applicable</p>
-        <p class="mt-4 text-sm md:text-base text-ms-body leading-relaxed">Compare up to three workflows in one business area. Receive a recommendation within five business days of the diagnostic session.</p>
-        <a href="/contact" data-conversion="ai-workflow-fit-call" data-placement="homepage-hero" class="block mt-5 bg-ms-green-500 hover:bg-ms-green-400 text-ms-dark-900 px-5 py-3.5 rounded-full font-semibold text-base transition text-center">
-          Book a 30-minute fit call →
-        </a>
-        <a href="/services/workflow-scan" data-conversion="ai-workflow-scan" data-placement="homepage-hero-details" class="block mt-3 py-1 text-center text-sm font-semibold text-ms-green-400 hover:text-ms-green-300 underline underline-offset-4 decoration-ms-green-400/40 transition">
-          See what the Scan includes →
-        </a>
-      </aside>
-    </div>
-  </section>
-
-  <!-- WORKFLOW SITUATIONS -->
-  <section aria-labelledby="workflow-situations-heading" class="bg-ms-dark-800 border-y border-white/5">
-    <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
-      <p class="text-ms-green-400 text-sm font-semibold tracking-wide mb-4">Workflows to examine</p>
-      <h2 id="workflow-situations-heading" class="text-3xl md:text-4xl font-bold max-w-3xl leading-tight">Start with the work that keeps coming back.</h2>
-      <div class="mt-10 grid md:grid-cols-3 gap-6">
-        {[
-          {
-            title: 'Recurring reports',
-            friction: 'People collect figures from several systems, reconcile them, and rebuild the same report each week.',
-            question: 'Which reporting workflow is worth rebuilding, and what must people still verify?'
-          },
-          {
-            title: 'Documents and reviews',
-            friction: 'Drafts are written, checked, revised, and passed between people who need the same context again.',
-            question: 'Where can AI reduce repeated drafting and checking while people retain approval?'
-          },
-          {
-            title: 'Scattered knowledge',
-            friction: 'The information needed for a decision is spread across documents, tools, and people’s heads.',
-            question: 'Which workflow would benefit from shared context, and what information is missing?'
-          }
-        ].map(situation => (
-          <div class="bg-ms-dark-900 border border-white/5 rounded-2xl p-6 md:p-8">
-            <h3 class="text-xl font-bold">{situation.title}</h3>
-            <p class="mt-4 text-ms-body leading-relaxed">{situation.friction}</p>
-            <p class="mt-5 pt-5 border-t border-white/10 text-sm text-ms-green-300 leading-relaxed">{situation.question}</p>
-          </div>
-        ))}
+      <div class="order-first lg:order-last flex justify-center lg:justify-end" aria-label="The Mindshift Halo logo">
+        <div class="relative">
+          <div class="absolute inset-3 bg-ms-green-500/15 rounded-full blur-3xl" aria-hidden="true"></div>
+          <img
+            src="/mindshift-logo.svg"
+            alt="The Mindshift Halo logo"
+            width="304"
+            height="304"
+            class="relative w-32 h-32 sm:w-44 sm:h-44 lg:w-72 lg:h-72 drop-shadow-[0_0_36px_rgba(74,222,128,0.18)]"
+          />
+        </div>
       </div>
-      <p class="mt-8 text-ms-body leading-relaxed max-w-3xl">The Scan compares the candidates for value, feasibility, and risk, then recommends where to begin. That gives your AI-native organization a practical starting point.</p>
     </div>
   </section>
 
