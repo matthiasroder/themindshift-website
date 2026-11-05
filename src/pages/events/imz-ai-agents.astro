@@ -1,18 +1,10 @@
 ---
-import { existsSync, readdirSync } from 'node:fs';
-import { resolve } from 'node:path';
 import Layout from '../../layouts/Layout.astro';
-
-const photoPath = '/images/events/imz-ai-agents';
-const photoDir = resolve('public', photoPath.slice(1));
-const photos = existsSync(photoDir)
-  ? readdirSync(photoDir).filter((name) => /^\d{6}-[a-f0-9]{24}\.jpg$/.test(name)).sort()
-  : [];
 ---
 
 <Layout
   title="IMZ Academy AI Agents Workshop"
-  description="Photos from the IMZ Academy AI Agents for Content Creation + Administration workshop with Matthias Röder in Vienna."
+  description="IMZ Academy workshop on AI Agents for Content Creation + Administration with Matthias Röder in Vienna."
 >
   <header class="mx-auto max-w-6xl px-6 pt-14 pb-10 md:pt-20 md:pb-14">
     <p class="mb-6 text-sm font-semibold uppercase tracking-[0.18em] text-ms-green-400">IMZ Academy · Workshop</p>
@@ -33,31 +25,6 @@ const photos = existsSync(photoDir)
     </p>
     <a href="https://www.imz.at/ai-agents/" class="mt-4 inline-block text-sm font-medium text-ms-green-300 underline underline-offset-4">Workshop programme at IMZ</a>
   </header>
-
-  <section class="border-y border-white/10 bg-ms-dark-800" aria-labelledby="photo-stream-title">
-    <div class="mx-auto max-w-6xl px-6 pt-9 pb-14 md:pt-11 md:pb-20">
-      <h2 id="photo-stream-title" class="mb-6 text-2xl font-semibold tracking-tight">Photo stream</h2>
-      {photos.length ? (
-        <ol class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
-          {photos.map((photo, index) => (
-            <li>
-              <a href={`${photoPath}/${photo}`} class="block overflow-hidden rounded-lg border border-white/10 hover:border-ms-green-400/60">
-                <img
-                  class="block h-auto w-full"
-                  src={`${photoPath}/${photo}`}
-                  alt={`IMZ Academy photo stream, image ${index + 1}`}
-                  width="1080"
-                  height="1920"
-                  loading={index < 2 ? 'eager' : 'lazy'}
-                  decoding="async"
-                />
-              </a>
-            </li>
-          ))}
-        </ol>
-      ) : <p class="text-ms-body">Photos will appear here as they’re added.</p>}
-    </div>
-  </section>
 </Layout>
 
 <style>
